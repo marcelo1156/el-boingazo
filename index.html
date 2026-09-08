@@ -4,25 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#111111">
+
 <link rel="apple-touch-icon" href="Apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 <link rel="manifest" href="manifest.json">
+
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="El Boingazo"> 
-    <title>El Boingazo | Inventario</title>
+<meta name="apple-mobile-web-app-title" content="El Boingazo">
+
+<title>El Boingazo</title>
 
 <style>
+
 :root {
     --rojo: #e53935;
     --rojo-oscuro: #b71c1c;
+    --verde: #2e7d32;
     --azul: #1976d2;
-    --azul-oscuro: #0d47a1;
-    --verde: #16a34a;
-    --negro: #161616;
-    --gris: #f3f4f6;
-    --blanco: #ffffff;
-    --texto-gris: #777;
+    --gris: #666;
+    --gris-claro: #f3f3f3;
+    --negro: #111;
+    --blanco: #fff;
 }
 
 * {
@@ -32,54 +35,41 @@
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--gris);
-    color: #171717;
-    padding-bottom: 90px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    padding-bottom: 85px;
 }
-
-button, input {
-    font-family: inherit;
-}
-
-button {
-    border: none;
-    cursor: pointer;
-}
-
-/* HEADER */
 
 header {
     background: var(--negro);
     color: white;
-    padding: 22px 20px;
-    border-radius: 0 0 25px 25px;
+    padding: 18px 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: 900;
+header h1 {
+    margin: 0;
+    font-size: 25px;
 }
 
-.subtitulo {
-    color: #aaa;
+header p {
+    margin: 5px 0 0;
     font-size: 13px;
-    margin-top: 4px;
+    opacity: .8;
 }
 
-.fecha {
-    margin-top: 14px;
-    color: #ddd;
-    font-size: 14px;
+.contenedor {
+    max-width: 700px;
+    margin: auto;
+    padding: 15px;
 }
-
-/* PÁGINAS */
 
 .pagina {
     display: none;
-    padding: 18px;
-    max-width: 700px;
-    margin: auto;
 }
 
 .pagina.activa {
@@ -87,159 +77,173 @@ header {
 }
 
 .titulo {
-    font-size: 23px;
-    font-weight: 900;
-    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 10px 0 18px;
 }
 
-/* BOTONES DE VENTA */
-
-.ventas-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 13px;
-}
-
-.boton-venta {
-    min-height: 240px;
-    border-radius: 25px;
-    color: white;
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: left;
-    box-shadow: 0 8px 20px rgba(0,0,0,.15);
-    transition: transform .1s;
-}
-
-.boton-venta:active {
-    transform: scale(.96);
-}
-
-.chico {
-    background: linear-gradient(145deg, #f44336, #b71c1c);
-}
-
-.grande {
-    background: linear-gradient(145deg, #2196f3, #0d47a1);
-}
-
-.icono-producto {
-    font-size: 38px;
-}
-
-.nombre-producto {
-    font-size: 26px;
-    font-weight: 900;
-    margin-top: 8px;
-}
-
-.precio-producto {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.stock-box {
-    background: rgba(0,0,0,.2);
-    padding: 10px;
-    border-radius: 13px;
-}
-
-.stock-box strong {
-    font-size: 25px;
-}
-
-.aviso {
-    font-size: 11px;
-    margin-top: 8px;
-    opacity: .85;
+.subtitulo {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 22px 0 10px;
 }
 
 /* TARJETAS */
 
-.resumen-principal {
-    background: var(--negro);
-    color: white;
-    border-radius: 20px;
-    padding: 20px;
-    margin-top: 18px;
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
 }
 
-.resumen-principal small {
-    color: #aaa;
+.card h3 {
+    margin: 0 0 8px;
 }
 
-.dinero-grande {
-    font-size: 38px;
-    font-weight: 900;
-    margin-top: 5px;
+.card p {
+    margin: 6px 0;
 }
 
-.tarjetas {
+/* INICIO */
+
+.ventas-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 11px;
-    margin-top: 12px;
+    gap: 12px;
 }
 
-.tarjeta {
+.venta-card {
     background: white;
-    padding: 16px;
-    border-radius: 17px;
-    box-shadow: 0 3px 10px rgba(0,0,0,.05);
+    border-radius: 20px;
+    padding: 20px 12px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
 }
 
-.tarjeta-label {
-    font-size: 12px;
-    color: var(--texto-gris);
-    font-weight: bold;
+.venta-card .emoji {
+    font-size: 42px;
 }
 
-.tarjeta-valor {
-    font-size: 25px;
-    font-weight: 900;
-    margin-top: 5px;
+.venta-card h3 {
+    margin: 7px 0;
 }
 
-/* BOTONES */
+.venta-card .precio {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--rojo);
+}
 
-.btn {
+.btn-vender {
     width: 100%;
-    padding: 15px;
+    border: 0;
+    background: var(--rojo);
+    color: white;
+    font-size: 17px;
+    font-weight: 800;
+    padding: 14px;
     border-radius: 14px;
-    font-weight: bold;
-    font-size: 15px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
-.btn-negro {
-    background: var(--negro);
-    color: white;
+.btn-vender:active {
+    transform: scale(.97);
 }
 
-.btn-verde {
-    background: var(--verde);
-    color: white;
+/* ESTADISTICAS */
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
 }
 
-.btn-gris {
-    background: #e5e7eb;
-    color: #111;
+.stat {
+    background: white;
+    border-radius: 17px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
 }
 
-.btn-rojo {
-    background: var(--rojo-oscuro);
-    color: white;
+.stat .numero {
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.stat .texto {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* INVENTARIO */
+
+.inventario-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.inventario-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+}
+
+.inventario-card .cantidad {
+    font-size: 42px;
+    font-weight: 900;
+    margin: 8px 0;
+}
+
+.inventario-card .nombre {
+    font-weight: 700;
+}
+
+.inventario-card .precio {
+    color: var(--rojo);
+    font-weight: 700;
 }
 
 /* FORMULARIOS */
 
 .formulario {
     background: white;
-    padding: 17px;
+    padding: 18px;
     border-radius: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.campo {
     margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 11px;
+    font-size: 16px;
+    background: white;
+}
+
+.campo textarea {
+    min-height: 80px;
+    resize: vertical;
 }
 
 .form-row {
@@ -248,317 +252,417 @@ header {
     gap: 10px;
 }
 
-.campo {
+.btn {
+    width: 100%;
+    border: 0;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    margin-top: 7px;
+    cursor: pointer;
+}
+
+.btn-rojo {
+    background: var(--rojo);
+    color: white;
+}
+
+.btn-verde {
+    background: var(--verde);
+    color: white;
+}
+
+.btn-azul {
+    background: var(--azul);
+    color: white;
+}
+
+.btn-gris {
+    background: #e0e0e0;
+    color: #222;
+}
+
+.btn-negro {
+    background: #111;
+    color: white;
+}
+
+/* EVENTOS */
+
+.evento-card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+    border-left: 5px solid var(--rojo);
+}
+
+.evento-titulo {
+    font-size: 20px;
+    font-weight: 900;
     margin-bottom: 12px;
 }
 
-.campo label {
-    display: block;
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 6px;
+.evento-dato {
+    margin: 7px 0;
+    line-height: 1.35;
 }
 
-.campo input {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    font-size: 16px;
+.evento-dato strong {
+    display: inline-block;
+}
+
+.evento-restante {
+    background: #ffebee;
+    color: var(--rojo-oscuro);
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 900;
+    margin: 12px 0;
+}
+
+.evento-botones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.evento-botones button {
+    border: 0;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.btn-editar {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.btn-eliminar {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.vacio {
+    text-align: center;
+    background: white;
+    padding: 30px 15px;
+    border-radius: 18px;
+    color: #777;
 }
 
 /* LISTAS */
 
 .lista {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
+    margin-top: 12px;
 }
 
-.item {
-    background: white;
-    padding: 14px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,.04);
-}
-
-.item-titulo {
-    font-weight: bold;
-}
-
-.item-sub {
-    font-size: 12px;
-    color: #777;
-    margin-top: 4px;
-}
-
-.vacio {
+.lista-item {
     background: white;
     border-radius: 15px;
-    padding: 25px;
-    text-align: center;
-    color: #888;
-}
-
-/* HISTORIAL */
-
-.historial-dia {
-    background: white;
-    border-radius: 17px;
-    margin-bottom: 10px;
-    overflow: hidden;
-}
-
-.historial-header {
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.historial-detalle {
-    border-top: 1px solid #eee;
     padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
 }
 
-/* NAVEGACIÓN */
+.lista-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.lista-item small {
+    color: #777;
+}
+
+/* AJUSTES */
+
+.ajuste-bloque {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.ajuste-bloque h3 {
+    margin-top: 0;
+}
+
+/* NAVEGACION */
 
 .navegacion {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 75px;
     background: white;
-    display: flex;
-    justify-content: space-around;
     border-top: 1px solid #ddd;
-    z-index: 10;
+    display: flex;
+    z-index: 200;
+    padding: 5px 2px calc(5px + env(safe-area-inset-bottom));
+    box-shadow: 0 -2px 10px rgba(0,0,0,.08);
 }
 
 .navegacion button {
-    background: transparent;
-    font-size: 10px;
-    color: #777;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     flex: 1;
+    border: 0;
+    background: transparent;
+    padding: 7px 2px;
+    font-size: 9px;
+    color: #777;
+    cursor: pointer;
 }
 
 .navegacion button span {
-    font-size: 23px;
-    margin-bottom: 3px;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 2px;
 }
 
 .navegacion button.activo {
-    color: black;
-    font-weight: bold;
+    color: var(--rojo);
+    font-weight: 800;
 }
 
 /* TOAST */
 
 .toast {
     position: fixed;
-    bottom: 90px;
     left: 50%;
-    transform: translateX(-50%) translateY(30px);
-    background: #111;
+    bottom: 90px;
+    transform: translateX(-50%);
+    background: #222;
     color: white;
     padding: 13px 20px;
-    border-radius: 13px;
-    opacity: 0;
-    transition: .25s;
-    z-index: 100;
-    white-space: nowrap;
+    border-radius: 30px;
+    font-weight: 700;
+    z-index: 500;
+    display: none;
+    max-width: 90%;
+    text-align: center;
 }
 
 .toast.mostrar {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    display: block;
 }
 
 /* RESPONSIVE */
 
-@media(max-width: 400px) {
-    .boton-venta {
-        min-height: 210px;
+@media (max-width: 420px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
     }
 
-    .nombre-producto {
-        font-size: 22px;
+    .ventas-grid,
+    .inventario-grid {
+        gap: 8px;
+    }
+
+    .venta-card {
+        padding: 15px 8px;
+    }
+
+    .navegacion button {
+        font-size: 8px;
+    }
+
+    .navegacion button span {
+        font-size: 18px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">🥤 EL BOINGAZO</div>
-    <div class="subtitulo">Sistema de inventario y ventas</div>
-    <div class="fecha" id="fechaActual"></div>
+    <h1>🥤 El Boingazo</h1>
+    <p>Inventario · Ventas · Eventos</p>
 </header>
 
+<div class="contenedor">
 
-<!-- ================= INICIO ================= -->
+<!-- =========================
+     INICIO
+========================= -->
 
 <section class="pagina activa" id="inicio">
 
-    <div class="titulo">Registrar venta</div>
+    <div class="titulo">🏠 Inicio</div>
+
+    <div class="estadisticas">
+
+        <div class="stat">
+            <div class="numero" id="ventasHoyCantidad">0</div>
+            <div class="texto">Ventas de hoy</div>
+        </div>
+
+        <div class="stat">
+            <div class="numero" id="ventasHoyDinero">$0</div>
+            <div class="texto">Ingresos de hoy</div>
+        </div>
+
+        <div class="stat">
+            <div class="numero" id="inventarioTotal">0</div>
+            <div class="texto">Productos disponibles</div>
+        </div>
+
+        <div class="stat">
+            <div class="numero" id="eventosPendientes">0</div>
+            <div class="texto">Eventos registrados</div>
+        </div>
+
+    </div>
+
+    <div class="subtitulo">🥤 Registrar venta</div>
 
     <div class="ventas-grid">
 
-        <button class="boton-venta chico" onclick="vender('chico')">
+        <div class="venta-card">
 
-            <div>
-                <div class="icono-producto">🔴</div>
-                <div class="nombre-producto">CHICO</div>
-                <div class="precio-producto" id="precioChico">$65</div>
+            <div class="emoji">🥤</div>
+
+            <h3>Chico</h3>
+
+            <div class="precio" id="precioInicioChico">
+                $65
             </div>
 
             <div>
-                <div class="stock-box">
-                    Disponible:
-                    <br>
-                    <strong id="inventarioChico">20</strong>
-                </div>
-
-                <div class="aviso">
-                    Toca para registrar venta
-                </div>
+                Disponibles:
+                <strong id="stockInicioChico">0</strong>
             </div>
 
+            <button class="btn-vender" onclick="vender('chico')">
+                + Vender
+            </button>
+
+        </div>
+
+        <div class="venta-card">
+
+            <div class="emoji">🥤</div>
+
+            <h3>Grande</h3>
+
+            <div class="precio" id="precioInicioGrande">
+                $85
+            </div>
+
+            <div>
+                Disponibles:
+                <strong id="stockInicioGrande">0</strong>
+            </div>
+
+            <button class="btn-vender" onclick="vender('grande')">
+                + Vender
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="subtitulo">↩️ Última venta</div>
+
+    <div class="card">
+
+        <div id="ultimaVenta">
+            No hay ventas registradas.
+        </div>
+
+        <button class="btn btn-gris" onclick="deshacerVenta()">
+            ↩️ Deshacer última venta
         </button>
 
-
-        <button class="boton-venta grande" onclick="vender('grande')">
-
-            <div>
-                <div class="icono-producto">🔵</div>
-                <div class="nombre-producto">GRANDE</div>
-                <div class="precio-producto" id="precioGrande">$85</div>
-            </div>
-
-            <div>
-                <div class="stock-box">
-                    Disponible:
-                    <br>
-                    <strong id="inventarioGrande">10</strong>
-                </div>
-
-                <div class="aviso">
-                    Toca para registrar venta
-                </div>
-            </div>
-
-        </button>
-
     </div>
-
-
-    <div class="resumen-principal">
-
-        <small>VENTA TOTAL DE HOY</small>
-
-        <div class="dinero-grande" id="ventaHoy">
-            $0
-        </div>
-
-        <div id="numeroVentas">
-            0 ventas
-        </div>
-
-    </div>
-
-
-    <div class="tarjetas">
-
-        <div class="tarjeta">
-            <div class="tarjeta-label">
-                🥤 Chicos vendidos
-            </div>
-
-            <div class="tarjeta-valor" id="chicosVendidos">
-                0
-            </div>
-        </div>
-
-
-        <div class="tarjeta">
-            <div class="tarjeta-label">
-                🥤 Grandes vendidos
-            </div>
-
-            <div class="tarjeta-valor" id="grandesVendidos">
-                0
-            </div>
-        </div>
-
-
-        <div class="tarjeta">
-            <div class="tarjeta-label">
-                📦 Chicos restantes
-            </div>
-
-            <div class="tarjeta-valor" id="chicosRestantes">
-                20
-            </div>
-        </div>
-
-
-        <div class="tarjeta">
-            <div class="tarjeta-label">
-                📦 Grandes restantes
-            </div>
-
-            <div class="tarjeta-valor" id="grandesRestantes">
-                10
-            </div>
-        </div>
-
-    </div>
-
-
-    <button class="btn btn-gris" onclick="deshacerVenta()">
-        ↩️ Deshacer última venta
-    </button>
-
-
-    <div class="titulo" style="margin-top:25px;">
-        Últimas ventas
-    </div>
-
-    <div class="lista" id="ultimasVentas"></div>
 
 </section>
 
 
-<!-- ================= INVENTARIO ================= -->
+<!-- =========================
+     INVENTARIO
+========================= -->
 
 <section class="pagina" id="inventario">
 
-    <div class="titulo">
-        📦 Agregar inventario
+    <div class="titulo">📦 Inventario</div>
+
+    <div class="inventario-grid">
+
+        <div class="inventario-card">
+
+            <div class="emoji">🥤</div>
+
+            <div class="nombre">Chico</div>
+
+            <div class="cantidad" id="stockChico">
+                0
+            </div>
+
+            <div class="precio" id="precioInventarioChico">
+                $65
+            </div>
+
+        </div>
+
+        <div class="inventario-card">
+
+            <div class="emoji">🥤</div>
+
+            <div class="nombre">Grande</div>
+
+            <div class="cantidad" id="stockGrande">
+                0
+            </div>
+
+            <div class="precio" id="precioInventarioGrande">
+                $85
+            </div>
+
+        </div>
+
     </div>
 
 
+    <div class="subtitulo">➕ Agregar inventario</div>
+
     <div class="formulario">
 
-        <div class="form-row">
+        <div class="campo">
 
-            <div class="campo">
-                <label>Chicos (+)</label>
-                <input type="number" id="agregarChico" min="0" placeholder="Ej. 20">
-            </div>
+            <label>Producto</label>
 
-            <div class="campo">
-                <label>Grandes (+)</label>
-                <input type="number" id="agregarGrande" min="0" placeholder="Ej. 10">
-            </div>
+            <select id="productoAgregar">
+
+                <option value="chico">
+                    🥤 Chico
+                </option>
+
+                <option value="grande">
+                    🥤 Grande
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="campo">
+
+            <label>Cantidad</label>
+
+            <input
+                type="number"
+                id="cantidadAgregar"
+                min="1"
+                placeholder="Ej. 20"
+            >
 
         </div>
 
@@ -569,84 +673,303 @@ header {
     </div>
 
 
-    <div class="titulo">
-        Inventario actual
+    <div class="subtitulo">✏️ Corregir inventario</div>
+
+    <div class="formulario">
+
+        <div class="campo">
+
+            <label>🥤 Cantidad Chico</label>
+
+            <input
+                type="number"
+                id="corregirChico"
+                min="0"
+            >
+
+        </div>
+
+        <div class="campo">
+
+            <label>🥤 Cantidad Grande</label>
+
+            <input
+                type="number"
+                id="corregirGrande"
+                min="0"
+            >
+
+        </div>
+
+        <button class="btn btn-azul" onclick="corregirInventario()">
+            💾 Guardar cantidades
+        </button>
+
     </div>
-
-    <div class="lista" id="listaInventario"></div>
-
-
-    <div class="titulo" style="margin-top:25px;">
-        Entradas recientes
-    </div>
-
-    <div class="lista" id="historialInventario"></div>
 
 </section>
 
 
-<!-- ================= RESUMEN ================= -->
+<!-- =========================
+     EVENTOS
+========================= -->
+
+<section class="pagina" id="eventos">
+
+    <div class="titulo">🎉 Eventos</div>
+
+    <div class="formulario">
+
+        <div class="campo">
+
+            <label>🎉 Nombre del cliente</label>
+
+            <input
+                type="text"
+                id="eventoCliente"
+                placeholder="Nombre del cliente"
+            >
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="campo">
+
+                <label>📅 Fecha</label>
+
+                <input
+                    type="date"
+                    id="eventoFecha"
+                >
+
+            </div>
+
+
+            <div class="campo">
+
+                <label>🕐 Horario</label>
+
+                <input
+                    type="time"
+                    id="eventoHorario"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="campo">
+
+            <label>📍 Ubicación</label>
+
+            <input
+                type="text"
+                id="eventoUbicacion"
+                placeholder="Lugar del evento"
+            >
+
+        </div>
+
+
+        <div class="campo">
+
+            <label>📦 Paquete seleccionado</label>
+
+            <input
+                type="text"
+                id="eventoPaquete"
+                placeholder="Ej. Paquete para 50 personas"
+            >
+
+        </div>
+
+
+        <div class="campo">
+
+            <label>🥤 Sabores</label>
+
+            <input
+                type="text"
+                id="eventoSabores"
+                placeholder="Ej. Mango, Fresa, Guayaba"
+            >
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="campo">
+
+                <label>💰 Costo del evento</label>
+
+                <input
+                    type="number"
+                    id="eventoCosto"
+                    min="0"
+                    placeholder="$0"
+                    oninput="calcularRestante()"
+                >
+
+            </div>
+
+
+            <div class="campo">
+
+                <label>💵 Anticipo recibido</label>
+
+                <input
+                    type="number"
+                    id="eventoAnticipo"
+                    min="0"
+                    placeholder="$0"
+                    oninput="calcularRestante()"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="campo">
+
+            <label>🔴 Restante</label>
+
+            <input
+                type="text"
+                id="eventoRestante"
+                value="$0"
+                readonly
+            >
+
+        </div>
+
+
+        <div class="campo">
+
+            <label>➕ Extras</label>
+
+            <input
+                type="text"
+                id="eventoExtras"
+                placeholder="Ej. Vasos personalizados"
+            >
+
+        </div>
+
+
+        <button
+            class="btn btn-verde"
+            id="btnGuardarEvento"
+            onclick="guardarEvento()"
+        >
+            💾 Guardar evento
+        </button>
+
+
+        <button
+            class="btn btn-gris"
+            id="btnCancelarEdicion"
+            onclick="cancelarEdicionEvento()"
+            style="display:none"
+        >
+            ❌ Cancelar edición
+        </button>
+
+    </div>
+
+
+    <div class="titulo" style="margin-top:25px;">
+        📋 Lista de eventos
+    </div>
+
+    <div id="listaEventos"></div>
+
+</section>
+
+
+<!-- =========================
+     RESUMEN
+========================= -->
 
 <section class="pagina" id="resumen">
 
-    <div class="titulo">
-        📊 Resumen de hoy
+    <div class="titulo">📊 Resumen</div>
+
+    <div class="estadisticas">
+
+        <div class="stat">
+            <div class="numero" id="resumenHoyCantidad">
+                0
+            </div>
+
+            <div class="texto">
+                Ventas hoy
+            </div>
+        </div>
+
+
+        <div class="stat">
+
+            <div
+                class="numero"
+                id="resumenHoyDinero"
+            >
+                $0
+            </div>
+
+            <div class="texto">
+                Dinero hoy
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div
+                class="numero"
+                id="resumenSemanaCantidad"
+            >
+                0
+            </div>
+
+            <div class="texto">
+                Ventas esta semana
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div
+                class="numero"
+                id="resumenSemanaDinero"
+            >
+                $0
+            </div>
+
+            <div class="texto">
+                Dinero esta semana
+            </div>
+
+        </div>
+
     </div>
 
 
-    <div class="resumen-principal">
-
-        <small>VENTA TOTAL</small>
-
-        <div class="dinero-grande" id="resumenVenta">
-            $0
-        </div>
-
-        <div id="resumenFecha"></div>
-
+    <div class="subtitulo">
+        📅 Ventas de hoy
     </div>
 
+    <div class="card">
 
-    <div class="tarjetas">
-
-        <div class="tarjeta">
-            <div class="tarjeta-label">🧾 Total ventas</div>
-            <div class="tarjeta-valor" id="totalVentasResumen">0</div>
-        </div>
-
-        <div class="tarjeta">
-            <div class="tarjeta-label">🔴 Chicos</div>
-            <div class="tarjeta-valor" id="totalChicosResumen">0</div>
-        </div>
-
-        <div class="tarjeta">
-            <div class="tarjeta-label">🔵 Grandes</div>
-            <div class="tarjeta-valor" id="totalGrandesResumen">0</div>
-        </div>
-
-        <div class="tarjeta">
-            <div class="tarjeta-label">📦 Inventario total</div>
-            <div class="tarjeta-valor" id="inventarioTotalResumen">0</div>
-        </div>
-
-    </div>
-
-
-    <div class="titulo" style="margin-top:25px;">
-        📈 Esta semana
-    </div>
-
-
-    <div class="tarjetas">
-
-        <div class="tarjeta">
-            <div class="tarjeta-label">Dinero generado</div>
-            <div class="tarjeta-valor" id="dineroSemana">$0</div>
-        </div>
-
-        <div class="tarjeta">
-            <div class="tarjeta-label">Número de ventas</div>
-            <div class="tarjeta-valor" id="ventasSemana">0</div>
+        <div id="detalleVentasHoy">
+            No hay ventas hoy.
         </div>
 
     </div>
@@ -654,63 +977,89 @@ header {
 </section>
 
 
-<!-- ================= HISTORIAL ================= -->
+<!-- =========================
+     HISTORIAL
+========================= -->
 
 <section class="pagina" id="historial">
 
-    <div class="titulo">
-        📅 Historial por día
-    </div>
+    <div class="titulo">📋 Historial</div>
 
     <div id="listaHistorial"></div>
 
 </section>
 
 
-<!-- ================= AJUSTES ================= -->
+<!-- =========================
+     AJUSTES
+========================= -->
 
 <section class="pagina" id="ajustes">
 
-    <div class="titulo">
-        ⚙️ Configuración
-    </div>
+    <div class="titulo">⚙️ Ajustes</div>
 
 
-    <div class="formulario">
+    <div class="ajuste-bloque">
 
-        <div class="titulo" style="font-size:18px;">
-            💰 Precios
-        </div>
+        <h3>💰 Precios</h3>
 
-        <div class="form-row">
+        <div class="campo">
 
-            <div class="campo">
-                <label>Precio Chico</label>
-                <input type="number" id="configPrecioChico">
-            </div>
+            <label>🥤 Precio Chico</label>
 
-            <div class="campo">
-                <label>Precio Grande</label>
-                <input type="number" id="configPrecioGrande">
-            </div>
+            <input
+                type="number"
+                id="precioChico"
+                min="0"
+            >
 
         </div>
 
-        <button class="btn btn-negro" onclick="guardarPrecios()">
+
+        <div class="campo">
+
+            <label>🥤 Precio Grande</label>
+
+            <input
+                type="number"
+                id="precioGrande"
+                min="0"
+            >
+
+        </div>
+
+
+        <button
+            class="btn btn-verde"
+            onclick="guardarPrecios()"
+        >
             💾 Guardar precios
         </button>
 
     </div>
 
 
-    <div class="formulario">
+    <div class="ajuste-bloque">
 
-        <div class="titulo" style="font-size:18px;">
-            💾 Respaldo
-        </div>
+        <h3>💾 Respaldo</h3>
 
-        <button class="btn btn-negro" onclick="exportarDatos()">
-            📥 Exportar datos
+        <p>
+            Guarda una copia de todos tus datos,
+            incluyendo inventario, ventas y eventos.
+        </p>
+
+        <button
+            class="btn btn-azul"
+            onclick="exportarDatos()"
+        >
+            📥 Exportar respaldo
+        </button>
+
+        <button
+            class="btn btn-gris"
+            onclick="document.getElementById('archivoImportar').click()"
+        >
+            📤 Importar respaldo
         </button>
 
         <input
@@ -721,27 +1070,22 @@ header {
             onchange="importarDatos(event)"
         >
 
-        <button
-            class="btn btn-gris"
-            onclick="document.getElementById('archivoImportar').click()"
-        >
-            📤 Importar respaldo
-        </button>
-
     </div>
 
 
-    <div class="formulario">
+    <div class="ajuste-bloque">
 
-        <div class="titulo" style="font-size:18px;color:#b71c1c;">
-            ⚠️ Zona de administración
-        </div>
+        <h3>⚠️ Datos</h3>
 
-        <button class="btn btn-gris" onclick="corregirInventario()">
-            📦 Corregir inventario
-        </button>
+        <p>
+            Esta opción eliminará inventario,
+            ventas y eventos guardados en este dispositivo.
+        </p>
 
-        <button class="btn btn-rojo" onclick="borrarTodo()">
+        <button
+            class="btn btn-rojo"
+            onclick="borrarTodo()"
+        >
             🗑️ Borrar todos los datos
         </button>
 
@@ -749,32 +1093,65 @@ header {
 
 </section>
 
+</div>
 
-<!-- ================= NAVEGACIÓN ================= -->
+
+<!-- =========================
+     NAVEGACION
+========================= -->
 
 <nav class="navegacion">
 
-    <button class="activo" onclick="cambiarPagina('inicio', this)">
+    <button
+        class="activo"
+        id="navInicio"
+        onclick="cambiarPagina('inicio', this)"
+    >
         <span>🏠</span>
         Inicio
     </button>
 
-    <button onclick="cambiarPagina('inventario', this)">
+
+    <button
+        id="navInventario"
+        onclick="cambiarPagina('inventario', this)"
+    >
         <span>📦</span>
         Inventario
     </button>
 
-    <button onclick="cambiarPagina('resumen', this)">
+
+    <button
+        id="navEventos"
+        onclick="cambiarPagina('eventos', this)"
+    >
+        <span>🎉</span>
+        Eventos
+    </button>
+
+
+    <button
+        id="navResumen"
+        onclick="cambiarPagina('resumen', this)"
+    >
         <span>📊</span>
         Resumen
     </button>
 
-    <button onclick="cambiarPagina('historial', this)">
-        <span>📅</span>
+
+    <button
+        id="navHistorial"
+        onclick="cambiarPagina('historial', this)"
+    >
+        <span>📋</span>
         Historial
     </button>
 
-    <button onclick="cambiarPagina('ajustes', this)">
+
+    <button
+        id="navAjustes"
+        onclick="cambiarPagina('ajustes', this)"
+    >
         <span>⚙️</span>
         Ajustes
     </button>
@@ -788,10 +1165,11 @@ header {
 <script>
 
 /* =====================================================
-   DATOS PRINCIPALES
+   DATOS
 ===================================================== */
 
 const CLAVE = "el_boingazo_app";
+
 
 const datosIniciales = {
 
@@ -807,12 +1185,16 @@ const datosIniciales = {
 
     ventas: [],
 
-    entradasInventario: []
+    entradasInventario: [],
+
+    eventos: []
 
 };
 
 
 let datos = cargarDatos();
+
+let eventoEditando = null;
 
 
 /* =====================================================
@@ -821,19 +1203,56 @@ let datos = cargarDatos();
 
 function cargarDatos() {
 
-    const guardado = localStorage.getItem(CLAVE);
+    try {
 
-    if (guardado) {
-        return JSON.parse(guardado);
+        const guardado = localStorage.getItem(CLAVE);
+
+        if (guardado) {
+
+            const datosGuardados = JSON.parse(guardado);
+
+            if (!datosGuardados.inventario) {
+                datosGuardados.inventario = {
+                    chico: 0,
+                    grande: 0
+                };
+            }
+
+            if (!datosGuardados.precios) {
+                datosGuardados.precios = {
+                    chico: 65,
+                    grande: 85
+                };
+            }
+
+            if (!Array.isArray(datosGuardados.ventas)) {
+                datosGuardados.ventas = [];
+            }
+
+            if (!Array.isArray(datosGuardados.entradasInventario)) {
+                datosGuardados.entradasInventario = [];
+            }
+
+            if (!Array.isArray(datosGuardados.eventos)) {
+                datosGuardados.eventos = [];
+            }
+
+            return datosGuardados;
+        }
+
+    } catch (error) {
+
+        console.log("Error cargando datos:", error);
+
     }
 
-    return datosIniciales;
 
+    return JSON.parse(JSON.stringify(datosIniciales));
 }
 
 
 /* =====================================================
-   GUARDAR DATOS
+   GUARDAR
 ===================================================== */
 
 function guardarDatos() {
@@ -847,7 +1266,7 @@ function guardarDatos() {
 
 
 /* =====================================================
-   FECHA
+   UTILIDADES
 ===================================================== */
 
 function obtenerFecha() {
@@ -861,59 +1280,44 @@ function obtenerFecha() {
 
 function fechaBonita(fecha) {
 
+    if (!fecha) return "Sin fecha";
+
     const partes = fecha.split("-");
 
-    const nuevaFecha = new Date(
-        partes[0],
-        partes[1] - 1,
-        partes[2]
-    );
+    if (partes.length !== 3) {
+        return fecha;
+    }
 
-    return nuevaFecha.toLocaleDateString(
-        "es-MX",
-        {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-            year: "numeric"
-        }
-    );
+    return `${partes[2]}/${partes[1]}/${partes[0]}`;
 
 }
 
-
-/* =====================================================
-   FORMATO DINERO
-===================================================== */
 
 function dinero(numero) {
 
-    return new Intl.NumberFormat(
+    return Number(numero || 0).toLocaleString(
         "es-MX",
         {
             style: "currency",
-            currency: "MXN",
-            maximumFractionDigits: 0
+            currency: "MXN"
         }
-    ).format(numero);
+    );
 
 }
 
 
 /* =====================================================
-   VENDER
+   VENTAS
 ===================================================== */
 
 function vender(producto) {
 
-    if (datos.inventario[producto] <= 0) {
+    if (!datos.inventario[producto] ||
+        datos.inventario[producto] <= 0) {
 
-        mostrarToast(
-            "⚠️ No hay inventario disponible"
-        );
+        mostrarToast("⚠️ No hay inventario disponible");
 
         return;
-
     }
 
 
@@ -923,7 +1327,9 @@ function vender(producto) {
 
         producto: producto,
 
-        precio: datos.precios[producto],
+        precio: Number(
+            datos.precios[producto]
+        ),
 
         fecha: obtenerFecha(),
 
@@ -946,70 +1352,32 @@ function vender(producto) {
 
     actualizarTodo();
 
-    const nombre =
-        producto === "chico"
-            ? "Chico"
-            : "Grande";
-
     mostrarToast(
-        "✅ " + nombre + " vendido"
+        "✅ Venta registrada"
     );
 
 }
 
 
-/* =====================================================
-   DESHACER VENTA
-===================================================== */
-
 function deshacerVenta() {
 
-    const hoy = obtenerFecha();
-
-    const ventasHoy =
-        datos.ventas.filter(
-            venta => venta.fecha === hoy
-        );
-
-
-    if (ventasHoy.length === 0) {
+    if (!datos.ventas.length) {
 
         mostrarToast(
             "No hay ventas para deshacer"
         );
 
         return;
-
     }
 
 
-    const ultimaVenta =
-        ventasHoy[ventasHoy.length - 1];
+    const ultima =
+        datos.ventas[datos.ventas.length - 1];
 
 
-    const confirmar =
-        confirm(
-            "¿Deshacer la última venta?"
-        );
+    datos.inventario[ultima.producto]++;
 
-
-    if (!confirmar) return;
-
-
-    datos.inventario[
-        ultimaVenta.producto
-    ]++;
-
-
-    const indice =
-        datos.ventas.findIndex(
-            venta =>
-                venta.id === ultimaVenta.id
-        );
-
-
-    datos.ventas.splice(indice, 1);
-
+    datos.ventas.pop();
 
     guardarDatos();
 
@@ -1023,44 +1391,44 @@ function deshacerVenta() {
 
 
 /* =====================================================
-   AGREGAR INVENTARIO
+   INVENTARIO
 ===================================================== */
 
 function agregarInventario() {
 
-    const chico =
-        parseInt(
-            document.getElementById(
-                "agregarChico"
-            ).value
-        ) || 0;
+    const producto =
+        document.getElementById(
+            "productoAgregar"
+        ).value;
 
 
-    const grande =
-        parseInt(
-            document.getElementById(
-                "agregarGrande"
-            ).value
-        ) || 0;
+    const cantidad = Number(
+        document.getElementById(
+            "cantidadAgregar"
+        ).value
+    );
 
 
-    if (chico <= 0 && grande <= 0) {
+    if (!cantidad || cantidad <= 0) {
 
         mostrarToast(
-            "⚠️ Ingresa alguna cantidad"
+            "⚠️ Introduce una cantidad válida"
         );
 
         return;
-
     }
 
 
-    datos.inventario.chico += chico;
-
-    datos.inventario.grande += grande;
+    datos.inventario[producto] += cantidad;
 
 
     datos.entradasInventario.push({
+
+        id: Date.now(),
+
+        producto: producto,
+
+        cantidad: cantidad,
 
         fecha: obtenerFecha(),
 
@@ -1070,22 +1438,13 @@ function agregarInventario() {
                 hour: "2-digit",
                 minute: "2-digit"
             }
-        ),
-
-        chico: chico,
-
-        grande: grande
+        )
 
     });
 
 
     document.getElementById(
-        "agregarChico"
-    ).value = "";
-
-
-    document.getElementById(
-        "agregarGrande"
+        "cantidadAgregar"
     ).value = "";
 
 
@@ -1100,36 +1459,592 @@ function agregarInventario() {
 }
 
 
-/* =====================================================
-   VENTAS DE HOY
-===================================================== */
+function corregirInventario() {
 
-function obtenerVentasHoy() {
+    const chico = Number(
+        document.getElementById(
+            "corregirChico"
+        ).value
+    );
 
-    const hoy = obtenerFecha();
 
-    return datos.ventas.filter(
-        venta => venta.fecha === hoy
+    const grande = Number(
+        document.getElementById(
+            "corregirGrande"
+        ).value
+    );
+
+
+    if (chico < 0 || grande < 0) {
+
+        mostrarToast(
+            "⚠️ Las cantidades no pueden ser negativas"
+        );
+
+        return;
+    }
+
+
+    datos.inventario.chico = chico;
+
+    datos.inventario.grande = grande;
+
+
+    guardarDatos();
+
+    actualizarTodo();
+
+    mostrarToast(
+        "✅ Inventario corregido"
     );
 
 }
 
 
 /* =====================================================
-   ACTUALIZAR TODO
+   EVENTOS
 ===================================================== */
 
-function actualizarTodo() {
+function calcularRestante() {
 
-    actualizarInicio();
+    const costo = Number(
+        document.getElementById(
+            "eventoCosto"
+        ).value
+    ) || 0;
 
-    actualizarInventario();
 
-    actualizarResumen();
+    const anticipo = Number(
+        document.getElementById(
+            "eventoAnticipo"
+        ).value
+    ) || 0;
 
-    actualizarHistorial();
 
-    actualizarAjustes();
+    const restante =
+        Math.max(costo - anticipo, 0);
+
+
+    document.getElementById(
+        "eventoRestante"
+    ).value = dinero(restante);
+
+}
+
+
+function guardarEvento() {
+
+    const cliente =
+        document.getElementById(
+            "eventoCliente"
+        ).value.trim();
+
+
+    const fecha =
+        document.getElementById(
+            "eventoFecha"
+        ).value;
+
+
+    const horario =
+        document.getElementById(
+            "eventoHorario"
+        ).value;
+
+
+    const ubicacion =
+        document.getElementById(
+            "eventoUbicacion"
+        ).value.trim();
+
+
+    const paquete =
+        document.getElementById(
+            "eventoPaquete"
+        ).value.trim();
+
+
+    const sabores =
+        document.getElementById(
+            "eventoSabores"
+        ).value.trim();
+
+
+    const costo = Number(
+        document.getElementById(
+            "eventoCosto"
+        ).value
+    ) || 0;
+
+
+    const anticipo = Number(
+        document.getElementById(
+            "eventoAnticipo"
+        ).value
+    ) || 0;
+
+
+    const extras =
+        document.getElementById(
+            "eventoExtras"
+        ).value.trim();
+
+
+    if (!cliente) {
+
+        mostrarToast(
+            "⚠️ Escribe el nombre del cliente"
+        );
+
+        return;
+    }
+
+
+    if (!fecha) {
+
+        mostrarToast(
+            "⚠️ Selecciona la fecha"
+        );
+
+        return;
+    }
+
+
+    if (costo < 0 || anticipo < 0) {
+
+        mostrarToast(
+            "⚠️ Los montos no pueden ser negativos"
+        );
+
+        return;
+    }
+
+
+    if (anticipo > costo) {
+
+        mostrarToast(
+            "⚠️ El anticipo no puede ser mayor al costo"
+        );
+
+        return;
+    }
+
+
+    const evento = {
+
+        id: eventoEditando || Date.now(),
+
+        cliente: cliente,
+
+        fecha: fecha,
+
+        horario: horario,
+
+        ubicacion: ubicacion,
+
+        paquete: paquete,
+
+        sabores: sabores,
+
+        costo: costo,
+
+        anticipo: anticipo,
+
+        restante: costo - anticipo,
+
+        extras: extras
+
+    };
+
+
+    if (eventoEditando) {
+
+        const indice =
+            datos.eventos.findIndex(
+                e => e.id === eventoEditando
+            );
+
+
+        if (indice !== -1) {
+
+            datos.eventos[indice] = evento;
+
+        }
+
+        mostrarToast(
+            "✅ Evento actualizado"
+        );
+
+    } else {
+
+        datos.eventos.push(evento);
+
+        mostrarToast(
+            "🎉 Evento guardado"
+        );
+
+    }
+
+
+    guardarDatos();
+
+    actualizarTodo();
+
+    limpiarFormularioEvento();
+
+}
+
+
+/* =====================================================
+   EDITAR EVENTO
+===================================================== */
+
+function editarEvento(id) {
+
+    const evento =
+        datos.eventos.find(
+            e => e.id === id
+        );
+
+
+    if (!evento) return;
+
+
+    eventoEditando = id;
+
+
+    document.getElementById(
+        "eventoCliente"
+    ).value = evento.cliente || "";
+
+
+    document.getElementById(
+        "eventoFecha"
+    ).value = evento.fecha || "";
+
+
+    document.getElementById(
+        "eventoHorario"
+    ).value = evento.horario || "";
+
+
+    document.getElementById(
+        "eventoUbicacion"
+    ).value = evento.ubicacion || "";
+
+
+    document.getElementById(
+        "eventoPaquete"
+    ).value = evento.paquete || "";
+
+
+    document.getElementById(
+        "eventoSabores"
+    ).value = evento.sabores || "";
+
+
+    document.getElementById(
+        "eventoCosto"
+    ).value = evento.costo || 0;
+
+
+    document.getElementById(
+        "eventoAnticipo"
+    ).value = evento.anticipo || 0;
+
+
+    document.getElementById(
+        "eventoExtras"
+    ).value = evento.extras || "";
+
+
+    calcularRestante();
+
+
+    document.getElementById(
+        "btnGuardarEvento"
+    ).textContent =
+        "💾 Guardar cambios";
+
+
+    document.getElementById(
+        "btnCancelarEdicion"
+    ).style.display = "block";
+
+
+    cambiarPagina(
+        "eventos",
+        document.getElementById("navEventos")
+    );
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+
+    mostrarToast(
+        "✏️ Editando evento"
+    );
+
+}
+
+
+/* =====================================================
+   ELIMINAR EVENTO
+===================================================== */
+
+function eliminarEvento(id) {
+
+    const evento =
+        datos.eventos.find(
+            e => e.id === id
+        );
+
+
+    if (!evento) return;
+
+
+    const confirmar =
+        confirm(
+            `¿Eliminar el evento de ${evento.cliente}?`
+        );
+
+
+    if (!confirmar) return;
+
+
+    datos.eventos =
+        datos.eventos.filter(
+            e => e.id !== id
+        );
+
+
+    if (eventoEditando === id) {
+
+        limpiarFormularioEvento();
+
+    }
+
+
+    guardarDatos();
+
+    actualizarTodo();
+
+    mostrarToast(
+        "🗑️ Evento eliminado"
+    );
+
+}
+
+
+/* =====================================================
+   LIMPIAR EVENTO
+===================================================== */
+
+function limpiarFormularioEvento() {
+
+    eventoEditando = null;
+
+
+    document.getElementById(
+        "eventoCliente"
+    ).value = "";
+
+
+    document.getElementById(
+        "eventoFecha"
+    ).value = "";
+
+
+    document.getElementById(
+        "eventoHorario"
+    ).value = "";
+
+
+    document.getElementById(
+        "eventoUbicacion"
+    ).value = "";
+
+
+    document.getElementById(
+        "eventoPaquete"
+    ).value = "";
+
+
+    document.getElementById(
+        "eventoSabores"
+    ).value = "";
+
+
+    document.getElementById(
+        "eventoCosto"
+    ).value = "";
+
+
+    document.getElementById(
+        "eventoAnticipo"
+    ).value = "";
+
+
+    document.getElementById(
+        "eventoExtras"
+    ).value = "";
+
+
+    document.getElementById(
+        "eventoRestante"
+    ).value = "$0";
+
+
+    document.getElementById(
+        "btnGuardarEvento"
+    ).textContent =
+        "💾 Guardar evento";
+
+
+    document.getElementById(
+        "btnCancelarEdicion"
+    ).style.display = "none";
+
+}
+
+
+function cancelarEdicionEvento() {
+
+    limpiarFormularioEvento();
+
+    mostrarToast(
+        "Edición cancelada"
+    );
+
+}
+
+
+/* =====================================================
+   MOSTRAR EVENTOS
+===================================================== */
+
+function actualizarEventos() {
+
+    const contenedor =
+        document.getElementById(
+            "listaEventos"
+        );
+
+
+    if (!datos.eventos.length) {
+
+        contenedor.innerHTML = `
+            <div class="vacio">
+                🎉 No tienes eventos registrados.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    const eventosOrdenados =
+        datos.eventos
+        .slice()
+        .sort((a, b) => {
+
+            const fechaA =
+                new Date(
+                    `${a.fecha}T${a.horario || "00:00"}`
+                );
+
+            const fechaB =
+                new Date(
+                    `${b.fecha}T${b.horario || "00:00"}`
+                );
+
+            return fechaA - fechaB;
+
+        });
+
+
+    contenedor.innerHTML =
+        eventosOrdenados.map(evento => {
+
+            return `
+
+                <div class="evento-card">
+
+                    <div class="evento-titulo">
+                        🎉 ${evento.cliente}
+                    </div>
+
+                    <div class="evento-dato">
+                        📅 <strong>Fecha:</strong>
+                        ${fechaBonita(evento.fecha)}
+                    </div>
+
+                    <div class="evento-dato">
+                        🕐 <strong>Horario:</strong>
+                        ${evento.horario || "No especificado"}
+                    </div>
+
+                    <div class="evento-dato">
+                        📍 <strong>Ubicación:</strong>
+                        ${evento.ubicacion || "No especificada"}
+                    </div>
+
+                    <div class="evento-dato">
+                        📦 <strong>Paquete:</strong>
+                        ${evento.paquete || "No especificado"}
+                    </div>
+
+                    <div class="evento-dato">
+                        🥤 <strong>Sabores:</strong>
+                        ${evento.sabores || "No especificados"}
+                    </div>
+
+                    <div class="evento-dato">
+                        💰 <strong>Costo:</strong>
+                        ${dinero(evento.costo)}
+                    </div>
+
+                    <div class="evento-dato">
+                        💵 <strong>Anticipo:</strong>
+                        ${dinero(evento.anticipo)}
+                    </div>
+
+                    <div class="evento-restante">
+                        🔴 Restante:
+                        ${dinero(evento.restante)}
+                    </div>
+
+                    <div class="evento-dato">
+                        ➕ <strong>Extras:</strong>
+                        ${evento.extras || "Ninguno"}
+                    </div>
+
+                    <div class="evento-botones">
+
+                        <button
+                            class="btn-editar"
+                            onclick="editarEvento(${evento.id})"
+                        >
+                            ✏️ Editar
+                        </button>
+
+                        <button
+                            class="btn-eliminar"
+                            onclick="eliminarEvento(${evento.id})"
+                        >
+                            🗑️ Eliminar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
 
 }
 
@@ -1140,155 +2055,109 @@ function actualizarTodo() {
 
 function actualizarInicio() {
 
+    const hoy =
+        obtenerFecha();
+
+
     const ventasHoy =
-        obtenerVentasHoy();
+        datos.ventas.filter(
+            venta => venta.fecha === hoy
+        );
 
 
-    const chicos =
-        ventasHoy.filter(
-            venta =>
-                venta.producto === "chico"
-        ).length;
+    const cantidad =
+        ventasHoy.length;
 
 
-    const grandes =
-        ventasHoy.filter(
-            venta =>
-                venta.producto === "grande"
-        ).length;
-
-
-    const total =
+    const dineroHoy =
         ventasHoy.reduce(
-            (suma, venta) =>
-                suma + venta.precio,
+            (total, venta) =>
+                total + Number(venta.precio),
             0
         );
 
 
     document.getElementById(
-        "inventarioChico"
-    ).textContent =
-        datos.inventario.chico;
+        "ventasHoyCantidad"
+    ).textContent = cantidad;
 
 
     document.getElementById(
-        "inventarioGrande"
-    ).textContent =
-        datos.inventario.grande;
+        "ventasHoyDinero"
+    ).textContent = dinero(dineroHoy);
 
 
     document.getElementById(
-        "chicosRestantes"
+        "inventarioTotal"
     ).textContent =
-        datos.inventario.chico;
+        Number(datos.inventario.chico) +
+        Number(datos.inventario.grande);
 
 
     document.getElementById(
-        "grandesRestantes"
+        "eventosPendientes"
     ).textContent =
-        datos.inventario.grande;
+        datos.eventos.length;
 
 
     document.getElementById(
-        "precioChico"
+        "precioInicioChico"
     ).textContent =
         dinero(datos.precios.chico);
 
 
     document.getElementById(
-        "precioGrande"
+        "precioInicioGrande"
     ).textContent =
         dinero(datos.precios.grande);
 
 
     document.getElementById(
-        "chicosVendidos"
-    ).textContent = chicos;
-
-
-    document.getElementById(
-        "grandesVendidos"
-    ).textContent = grandes;
-
-
-    document.getElementById(
-        "ventaHoy"
+        "stockInicioChico"
     ).textContent =
-        dinero(total);
+        datos.inventario.chico;
 
 
     document.getElementById(
-        "numeroVentas"
+        "stockInicioGrande"
     ).textContent =
-        ventasHoy.length +
-        " ventas";
+        datos.inventario.grande;
 
 
-    const lista =
+    const ultimaVenta =
+        datos.ventas[
+            datos.ventas.length - 1
+        ];
+
+
+    if (!ultimaVenta) {
+
         document.getElementById(
-            "ultimasVentas"
-        );
-
-
-    if (ventasHoy.length === 0) {
-
-        lista.innerHTML =
-            '<div class="vacio">' +
-            'Aún no hay ventas hoy' +
-            '</div>';
+            "ultimaVenta"
+        ).textContent =
+            "No hay ventas registradas.";
 
         return;
-
     }
 
 
-    const ultimas =
-        ventasHoy
-            .slice(-6)
-            .reverse();
+    document.getElementById(
+        "ultimaVenta"
+    ).innerHTML = `
 
+        <strong>
+            🥤 ${ultimaVenta.producto === "chico"
+                ? "Chico"
+                : "Grande"}
+        </strong>
 
-    lista.innerHTML =
-        ultimas.map(
-            venta => {
+        ${dinero(ultimaVenta.precio)}
 
-                const emoji =
-                    venta.producto === "chico"
-                        ? "🔴"
-                        : "🔵";
+        · ${fechaBonita(ultimaVenta.fecha)}
 
+        · ${ultimaVenta.hora}
 
-                const nombre =
-                    venta.producto === "chico"
-                        ? "Chico"
-                        : "Grande";
-
-
-                return `
-                <div class="item">
-
-                    <div>
-
-                        <div class="item-titulo">
-                            ${emoji} ${nombre}
-                        </div>
-
-                        <div class="item-sub">
-                            ${venta.hora}
-                        </div>
-
-                    </div>
-
-                    <strong>
-                        ${dinero(venta.precio)}
-                    </strong>
-
-                </div>
-                `;
-
-            }
-        ).join("");
+    `;
 
 }
 
@@ -1299,123 +2168,40 @@ function actualizarInicio() {
 
 function actualizarInventario() {
 
-    const lista =
-        document.getElementById(
-            "listaInventario"
-        );
+    document.getElementById(
+        "stockChico"
+    ).textContent =
+        datos.inventario.chico;
 
 
-    lista.innerHTML = `
-
-        <div class="item">
-
-            <div>
-
-                <div class="item-titulo">
-                    🔴 Chico
-                </div>
-
-                <div class="item-sub">
-                    Precio ${dinero(
-                        datos.precios.chico
-                    )}
-                </div>
-
-            </div>
-
-            <strong>
-                ${datos.inventario.chico}
-                piezas
-            </strong>
-
-        </div>
+    document.getElementById(
+        "stockGrande"
+    ).textContent =
+        datos.inventario.grande;
 
 
-        <div class="item">
-
-            <div>
-
-                <div class="item-titulo">
-                    🔵 Grande
-                </div>
-
-                <div class="item-sub">
-                    Precio ${dinero(
-                        datos.precios.grande
-                    )}
-                </div>
-
-            </div>
-
-            <strong>
-                ${datos.inventario.grande}
-                piezas
-            </strong>
-
-        </div>
-
-    `;
+    document.getElementById(
+        "precioInventarioChico"
+    ).textContent =
+        dinero(datos.precios.chico);
 
 
-    const historial =
-        document.getElementById(
-            "historialInventario"
-        );
+    document.getElementById(
+        "precioInventarioGrande"
+    ).textContent =
+        dinero(datos.precios.grande);
 
 
-    if (
-        datos.entradasInventario.length === 0
-    ) {
-
-        historial.innerHTML =
-            '<div class="vacio">' +
-            'No hay entradas registradas' +
-            '</div>';
-
-        return;
-
-    }
+    document.getElementById(
+        "corregirChico"
+    ).value =
+        datos.inventario.chico;
 
 
-    historial.innerHTML =
-        datos.entradasInventario
-            .slice()
-            .reverse()
-            .slice(0, 10)
-            .map(
-                entrada => `
-
-                <div class="item">
-
-                    <div>
-
-                        <div class="item-titulo">
-                            📦 Entrada de inventario
-                        </div>
-
-                        <div class="item-sub">
-                            ${fechaBonita(
-                                entrada.fecha
-                            )}
-                            ·
-                            ${entrada.hora}
-                        </div>
-
-                    </div>
-
-                    <div>
-
-                        +${entrada.chico} 🔴
-                        <br>
-
-                        +${entrada.grande} 🔵
-
-                    </div>
-
-                </div>
-
-            `
-            ).join("");
+    document.getElementById(
+        "corregirGrande"
+    ).value =
+        datos.inventario.grande;
 
 }
 
@@ -1426,95 +2212,63 @@ function actualizarInventario() {
 
 function actualizarResumen() {
 
+    const hoy =
+        obtenerFecha();
+
+
     const ventasHoy =
-        obtenerVentasHoy();
+        datos.ventas.filter(
+            venta => venta.fecha === hoy
+        );
 
 
-    const chicos =
-        ventasHoy.filter(
-            venta =>
-                venta.producto === "chico"
-        ).length;
+    const cantidadHoy =
+        ventasHoy.length;
 
 
-    const grandes =
-        ventasHoy.filter(
-            venta =>
-                venta.producto === "grande"
-        ).length;
-
-
-    const total =
+    const dineroHoy =
         ventasHoy.reduce(
-            (suma, venta) =>
-                suma + venta.precio,
+            (total, venta) =>
+                total + Number(venta.precio),
             0
         );
 
 
     document.getElementById(
-        "resumenVenta"
+        "resumenHoyCantidad"
     ).textContent =
-        dinero(total);
+        cantidadHoy;
 
 
     document.getElementById(
-        "resumenFecha"
+        "resumenHoyDinero"
     ).textContent =
-        fechaBonita(
-            obtenerFecha()
-        );
+        dinero(dineroHoy);
 
 
-    document.getElementById(
-        "totalVentasResumen"
-    ).textContent =
-        ventasHoy.length;
-
-
-    document.getElementById(
-        "totalChicosResumen"
-    ).textContent = chicos;
-
-
-    document.getElementById(
-        "totalGrandesResumen"
-    ).textContent = grandes;
-
-
-    document.getElementById(
-        "inventarioTotalResumen"
-    ).textContent =
-        datos.inventario.chico +
-        datos.inventario.grande;
-
-
-    actualizarSemana();
-
-}
-
-
-/* =====================================================
-   ESTADÍSTICAS SEMANA
-===================================================== */
-
-function actualizarSemana() {
-
-    const ahora = new Date();
-
-    const inicioSemana =
+    const fechaActual =
         new Date();
 
+
     const dia =
-        ahora.getDay();
+        fechaActual.getDay();
+
+
+    const diferencia =
+        dia === 0 ? 6 : dia - 1;
+
+
+    const inicioSemana =
+        new Date(fechaActual);
+
 
     inicioSemana.setDate(
-        ahora.getDate() -
-        (dia === 0 ? 6 : dia - 1)
+        fechaActual.getDate() - diferencia
     );
 
+
     inicioSemana.setHours(
-        0,0,0,0
+        0, 0, 0, 0
     );
 
 
@@ -1527,33 +2281,75 @@ function actualizarSemana() {
                         venta.fecha + "T00:00:00"
                     );
 
-                return (
-                    fechaVenta >=
-                    inicioSemana
-                );
+                return fechaVenta >= inicioSemana;
 
             }
         );
 
 
+    const cantidadSemana =
+        ventasSemana.length;
+
+
     const dineroSemana =
         ventasSemana.reduce(
-            (suma, venta) =>
-                suma + venta.precio,
+            (total, venta) =>
+                total + Number(venta.precio),
             0
         );
 
 
     document.getElementById(
-        "dineroSemana"
+        "resumenSemanaCantidad"
+    ).textContent =
+        cantidadSemana;
+
+
+    document.getElementById(
+        "resumenSemanaDinero"
     ).textContent =
         dinero(dineroSemana);
 
 
+    if (!ventasHoy.length) {
+
+        document.getElementById(
+            "detalleVentasHoy"
+        ).innerHTML =
+            "No hay ventas hoy.";
+
+        return;
+    }
+
+
     document.getElementById(
-        "ventasSemana"
-    ).textContent =
-        ventasSemana.length;
+        "detalleVentasHoy"
+    ).innerHTML =
+        ventasHoy.map(
+            venta => `
+
+                <div class="lista-item">
+
+                    <strong>
+                        🥤 ${
+                            venta.producto === "chico"
+                            ? "Boing Chico"
+                            : "Boing Grande"
+                        }
+                    </strong>
+
+                    ${dinero(venta.precio)}
+
+                    <br>
+
+                    <small>
+                        ${venta.hora}
+                    </small>
+
+                </div>
+
+            `
+        ).join("");
 
 }
 
@@ -1570,140 +2366,68 @@ function actualizarHistorial() {
         );
 
 
-    if (
-        datos.ventas.length === 0
-    ) {
+    if (!datos.ventas.length) {
 
-        contenedor.innerHTML =
-            '<div class="vacio">' +
-            'Todavía no hay historial' +
-            '</div>';
+        contenedor.innerHTML = `
+            <div class="vacio">
+                📋 No hay ventas registradas.
+            </div>
+        `;
 
         return;
-
     }
 
 
-    const fechas =
-        [
-            ...new Set(
-                datos.ventas.map(
-                    venta =>
-                        venta.fecha
-                )
-            )
-        ]
-        .sort()
+    const ventas =
+        datos.ventas
+        .slice()
         .reverse();
 
 
     contenedor.innerHTML =
-        fechas.map(
-            fecha => {
+        ventas.map(
+            venta => `
 
-                const ventas =
-                    datos.ventas.filter(
-                        venta =>
-                            venta.fecha === fecha
-                    );
+                <div class="lista-item">
 
-
-                const chicos =
-                    ventas.filter(
-                        venta =>
+                    <strong>
+                        🥤 ${
                             venta.producto === "chico"
-                    ).length;
+                            ? "Boing Chico"
+                            : "Boing Grande"
+                        }
+                    </strong>
 
+                    💰 ${dinero(venta.precio)}
 
-                const grandes =
-                    ventas.filter(
-                        venta =>
-                            venta.producto === "grande"
-                    ).length;
+                    <br>
 
+                    📅 ${fechaBonita(venta.fecha)}
 
-                const total =
-                    ventas.reduce(
-                        (suma, venta) =>
-                            suma + venta.precio,
-                        0
-                    );
-
-
-                return `
-
-                <div class="historial-dia">
-
-                    <div class="historial-header">
-
-                        <div>
-
-                            <strong>
-                                📅
-                                ${fechaBonita(fecha)}
-                            </strong>
-
-                            <div class="item-sub">
-                                ${ventas.length}
-                                ventas
-                            </div>
-
-                        </div>
-
-                        <strong>
-                            ${dinero(total)}
-                        </strong>
-
-                    </div>
-
-
-                    <div class="historial-detalle">
-
-                        🔴 Chicos:
-                        <strong>
-                            ${chicos}
-                        </strong>
-
-                        <br><br>
-
-                        🔵 Grandes:
-                        <strong>
-                            ${grandes}
-                        </strong>
-
-                        <br><br>
-
-                        💰 Venta total:
-                        <strong>
-                            ${dinero(total)}
-                        </strong>
-
-                    </div>
+                    · 🕐 ${venta.hora}
 
                 </div>
 
-                `;
-
-            }
+            `
         ).join("");
 
 }
 
 
 /* =====================================================
-   AJUSTES
+   PRECIOS
 ===================================================== */
 
 function actualizarAjustes() {
 
     document.getElementById(
-        "configPrecioChico"
+        "precioChico"
     ).value =
         datos.precios.chico;
 
 
     document.getElementById(
-        "configPrecioGrande"
+        "precioGrande"
     ).value =
         datos.precios.grande;
 
@@ -1715,7 +2439,7 @@ function guardarPrecios() {
     const chico =
         Number(
             document.getElementById(
-                "configPrecioChico"
+                "precioChico"
             ).value
         );
 
@@ -1723,31 +2447,29 @@ function guardarPrecios() {
     const grande =
         Number(
             document.getElementById(
-                "configPrecioGrande"
+                "precioGrande"
             ).value
         );
 
 
     if (
         chico < 0 ||
-        grande < 0
+        grande < 0 ||
+        isNaN(chico) ||
+        isNaN(grande)
     ) {
 
         mostrarToast(
-            "⚠️ Precio inválido"
+            "⚠️ Introduce precios válidos"
         );
 
         return;
-
     }
 
 
-    datos.precios.chico =
-        chico;
+    datos.precios.chico = chico;
 
-
-    datos.precios.grande =
-        grande;
+    datos.precios.grande = grande;
 
 
     guardarDatos();
@@ -1755,73 +2477,14 @@ function guardarPrecios() {
     actualizarTodo();
 
     mostrarToast(
-        "💾 Precios guardados"
+        "💰 Precios actualizados"
     );
 
 }
 
 
 /* =====================================================
-   CORREGIR INVENTARIO
-===================================================== */
-
-function corregirInventario() {
-
-    const chico =
-        prompt(
-            "Inventario actual de CHICOS:",
-            datos.inventario.chico
-        );
-
-
-    if (chico === null) return;
-
-
-    const grande =
-        prompt(
-            "Inventario actual de GRANDES:",
-            datos.inventario.grande
-        );
-
-
-    if (grande === null) return;
-
-
-    if (
-        Number(chico) < 0 ||
-        Number(grande) < 0
-    ) {
-
-        mostrarToast(
-            "⚠️ Cantidad inválida"
-        );
-
-        return;
-
-    }
-
-
-    datos.inventario.chico =
-        Number(chico);
-
-
-    datos.inventario.grande =
-        Number(grande);
-
-
-    guardarDatos();
-
-    actualizarTodo();
-
-    mostrarToast(
-        "📦 Inventario corregido"
-    );
-
-}
-
-
-/* =====================================================
-   EXPORTAR DATOS
+   RESPALDO
 ===================================================== */
 
 function exportarDatos() {
@@ -1834,46 +2497,47 @@ function exportarDatos() {
         );
 
 
-    const blob =
+    const archivo =
         new Blob(
             [contenido],
             {
-                type:
-                "application/json"
+                type: "application/json"
             }
         );
+
+
+    const url =
+        URL.createObjectURL(archivo);
 
 
     const enlace =
         document.createElement("a");
 
 
-    enlace.href =
-        URL.createObjectURL(blob);
+    enlace.href = url;
 
 
     enlace.download =
-        "respaldo-el-boingazo.json";
+        "el-boingazo-respaldo.json";
 
 
     enlace.click();
 
 
+    URL.revokeObjectURL(url);
+
+
     mostrarToast(
-        "📥 Respaldo descargado"
+        "📥 Respaldo preparado"
     );
 
 }
 
 
-/* =====================================================
-   IMPORTAR DATOS
-===================================================== */
-
-function importarDatos(evento) {
+function importarDatos(event) {
 
     const archivo =
-        evento.target.files[0];
+        event.target.files[0];
 
 
     if (!archivo) return;
@@ -1883,41 +2547,89 @@ function importarDatos(evento) {
         new FileReader();
 
 
-    lector.onload =
-        function(e) {
+    lector.onload = function(e) {
 
-            try {
+        try {
 
-                datos =
-                    JSON.parse(
-                        e.target.result
-                    );
+            const datosImportados =
+                JSON.parse(
+                    e.target.result
+                );
 
 
-                guardarDatos();
+            if (!datosImportados.inventario) {
 
-                actualizarTodo();
-
-                mostrarToast(
-                    "📤 Respaldo restaurado"
+                throw new Error(
+                    "Archivo inválido"
                 );
 
             }
 
-            catch(error) {
 
-                mostrarToast(
-                    "⚠️ Archivo inválido"
+            if (!datosImportados.precios) {
+
+                throw new Error(
+                    "Archivo inválido"
                 );
 
             }
 
-        };
+
+            if (!Array.isArray(
+                datosImportados.ventas
+            )) {
+
+                datosImportados.ventas = [];
+
+            }
 
 
-    lector.readAsText(
-        archivo
-    );
+            if (!Array.isArray(
+                datosImportados.entradasInventario
+            )) {
+
+                datosImportados.entradasInventario = [];
+
+            }
+
+
+            if (!Array.isArray(
+                datosImportados.eventos
+            )) {
+
+                datosImportados.eventos = [];
+
+            }
+
+
+            datos = datosImportados;
+
+
+            guardarDatos();
+
+            actualizarTodo();
+
+
+            mostrarToast(
+                "✅ Respaldo importado"
+            );
+
+
+        } catch (error) {
+
+            mostrarToast(
+                "❌ El archivo no es válido"
+            );
+
+        }
+
+    };
+
+
+    lector.readAsText(archivo);
+
+
+    event.target.value = "";
 
 }
 
@@ -1930,23 +2642,25 @@ function borrarTodo() {
 
     const confirmar =
         confirm(
-            "⚠️ ¿ESTÁS SEGURO?\n\nSe eliminarán todas las ventas, inventario e historial."
+            "⚠️ ¿Seguro que quieres borrar TODOS los datos de El Boingazo?"
         );
 
 
     if (!confirmar) return;
 
 
-    localStorage.removeItem(
-        CLAVE
-    );
+    const segundaConfirmacion =
+        confirm(
+            "Esto eliminará inventario, ventas y eventos. ¿Continuar?"
+        );
+
+
+    if (!segundaConfirmacion) return;
 
 
     datos =
         JSON.parse(
-            JSON.stringify(
-                datosIniciales
-            )
+            JSON.stringify(datosIniciales)
         );
 
 
@@ -1962,7 +2676,7 @@ function borrarTodo() {
 
 
 /* =====================================================
-   CAMBIAR PÁGINA
+   NAVEGACION
 ===================================================== */
 
 function cambiarPagina(
@@ -1973,18 +2687,27 @@ function cambiarPagina(
     document
         .querySelectorAll(".pagina")
         .forEach(
-            elemento =>
+            elemento => {
                 elemento.classList.remove(
                     "activa"
-                )
+                );
+            }
         );
 
 
-    document
-        .getElementById(pagina)
-        .classList.add(
+    const paginaSeleccionada =
+        document.getElementById(
+            pagina
+        );
+
+
+    if (paginaSeleccionada) {
+
+        paginaSeleccionada.classList.add(
             "activa"
         );
+
+    }
 
 
     document
@@ -1992,16 +2715,21 @@ function cambiarPagina(
             ".navegacion button"
         )
         .forEach(
-            elemento =>
+            elemento => {
                 elemento.classList.remove(
                     "activo"
-                )
+                );
+            }
         );
 
 
-    boton.classList.add(
-        "activo"
-    );
+    if (boton) {
+
+        boton.classList.add(
+            "activo"
+        );
+
+    }
 
 
     window.scrollTo({
@@ -2016,7 +2744,7 @@ function cambiarPagina(
    TOAST
 ===================================================== */
 
-let tiempoToast;
+let toastTimer;
 
 
 function mostrarToast(mensaje) {
@@ -2037,21 +2765,42 @@ function mostrarToast(mensaje) {
 
 
     clearTimeout(
-        tiempoToast
+        toastTimer
     );
 
 
-    tiempoToast =
+    toastTimer =
         setTimeout(
-            function() {
+            () => {
 
                 toast.classList.remove(
                     "mostrar"
                 );
 
             },
-            2000
+            2200
         );
+
+}
+
+
+/* =====================================================
+   ACTUALIZAR TODO
+===================================================== */
+
+function actualizarTodo() {
+
+    actualizarInicio();
+
+    actualizarInventario();
+
+    actualizarEventos();
+
+    actualizarResumen();
+
+    actualizarHistorial();
+
+    actualizarAjustes();
 
 }
 
@@ -2059,14 +2808,6 @@ function mostrarToast(mensaje) {
 /* =====================================================
    INICIAR APP
 ===================================================== */
-
-document.getElementById(
-    "fechaActual"
-).textContent =
-    fechaBonita(
-        obtenerFecha()
-    );
-
 
 actualizarTodo();
 
