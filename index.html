@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,7 +31,6 @@ content="black">
 content="El Boingazo">
 
 <title>El Boingazo</title>
-
 
 <style>
 
@@ -124,7 +124,6 @@ header p {
     margin:6px 0;
 }
 
-
 /* ESTADISTICAS */
 
 .estadisticas {
@@ -151,7 +150,6 @@ header p {
     color:#666;
     margin-top:4px;
 }
-
 
 /* VENTAS */
 
@@ -199,7 +197,6 @@ header p {
 .btn-vender:active {
     transform:scale(.97);
 }
-
 
 /* FORMULARIOS */
 
@@ -278,6 +275,29 @@ header p {
     color:white;
 }
 
+/* CORTE */
+
+.corte-card {
+    background:white;
+    border-radius:18px;
+    padding:18px;
+    margin-top:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.07);
+    border-left:5px solid var(--azul);
+}
+
+.corte-titulo {
+    font-size:18px;
+    font-weight:900;
+    margin-bottom:10px;
+}
+
+.corte-total {
+    font-size:26px;
+    font-weight:900;
+    color:var(--rojo);
+    margin-top:10px;
+}
 
 /* INVENTARIO */
 
@@ -309,7 +329,6 @@ header p {
     color:var(--rojo);
     font-weight:700;
 }
-
 
 /* EVENTOS */
 
@@ -367,32 +386,6 @@ header p {
     color:#c62828;
 }
 
-
-/* CORTE */
-
-.corte-card {
-    background:white;
-    border-radius:18px;
-    padding:18px;
-    margin-top:15px;
-    box-shadow:0 2px 10px rgba(0,0,0,.07);
-    border-left:5px solid var(--azul);
-}
-
-.corte-titulo {
-    font-size:18px;
-    font-weight:900;
-    margin-bottom:10px;
-}
-
-.corte-total {
-    font-size:26px;
-    font-weight:900;
-    color:var(--rojo);
-    margin-top:10px;
-}
-
-
 /* ACUMULADO */
 
 .acumulado-card {
@@ -430,7 +423,6 @@ header p {
 .btn-pagado:active {
     transform:scale(.98);
 }
-
 
 /* HISTORIAL */
 
@@ -471,7 +463,6 @@ header p {
     margin-top:8px;
 }
 
-
 /* AJUSTES */
 
 .ajuste-bloque {
@@ -486,7 +477,6 @@ header p {
     margin-top:0;
 }
 
-
 /* VACIO */
 
 .vacio {
@@ -496,7 +486,6 @@ header p {
     border-radius:18px;
     color:#777;
 }
-
 
 /* NAVEGACION */
 
@@ -534,7 +523,6 @@ header p {
     font-weight:800;
 }
 
-
 /* TOAST */
 
 .toast {
@@ -557,7 +545,6 @@ header p {
     display:block;
 }
 
-
 @media (max-width:420px) {
 
     .form-row {
@@ -577,9 +564,7 @@ header p {
 </style>
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -591,9 +576,7 @@ header p {
 
 </header>
 
-
 <div class="contenedor">
-
 
 <!-- =================================================
      INICIO
@@ -606,7 +589,6 @@ id="inicio">
     <div class="titulo">
         🏠 Inicio
     </div>
-
 
     <div class="estadisticas">
 
@@ -624,7 +606,6 @@ id="inicio">
 
         </div>
 
-
         <div class="stat">
 
             <div
@@ -639,7 +620,6 @@ id="inicio">
 
         </div>
 
-
         <div class="stat">
 
             <div
@@ -653,7 +633,6 @@ id="inicio">
             </div>
 
         </div>
-
 
         <div class="stat">
 
@@ -671,14 +650,11 @@ id="inicio">
 
     </div>
 
-
     <div class="subtitulo">
         🥤 Registrar venta
     </div>
 
-
     <div class="ventas-grid">
-
 
         <div class="venta-card">
 
@@ -713,7 +689,6 @@ id="inicio">
 
         </div>
 
-
         <div class="venta-card">
 
             <div class="emoji">
@@ -747,28 +722,25 @@ id="inicio">
 
         </div>
 
-
     </div>
 
-
-    <!-- CORTE DEL DÍA -->
+    <!-- CORTE -->
 
     <div class="subtitulo">
-        🔴 Corte de venta de hoy
+        🔴 Corte de venta
     </div>
-
 
     <div class="card">
 
         <p>
-            Guarda el resumen de todas las ventas realizadas hoy.
+            Guarda el resumen de todas las ventas realizadas durante el día.
         </p>
 
         <button
         class="btn btn-rojo"
         onclick="darCorteHoy()">
 
-            🔴 Dar corte de venta de hoy
+            🔴 CORTE
 
         </button>
 
@@ -779,11 +751,9 @@ id="inicio">
 
     </div>
 
-
     <div class="subtitulo">
         ↩️ Última venta
     </div>
-
 
     <div class="card">
 
@@ -801,10 +771,7 @@ id="inicio">
 
     </div>
 
-
 </section>
-
-
 
 <!-- =================================================
      INVENTARIO
@@ -818,9 +785,7 @@ id="inventario">
         📦 Inventario
     </div>
 
-
     <div class="inventario-grid">
-
 
         <div class="inventario-card">
 
@@ -846,7 +811,6 @@ id="inventario">
 
         </div>
 
-
         <div class="inventario-card">
 
             <div style="font-size:40px;">
@@ -871,17 +835,13 @@ id="inventario">
 
         </div>
 
-
     </div>
-
 
     <div class="subtitulo">
         ➕ Agregar inventario
     </div>
 
-
     <div class="formulario">
-
 
         <div class="campo">
 
@@ -903,7 +863,6 @@ id="inventario">
 
         </div>
 
-
         <div class="campo">
 
             <label>
@@ -918,7 +877,6 @@ id="inventario">
 
         </div>
 
-
         <button
         class="btn btn-verde"
         onclick="agregarInventario()">
@@ -927,17 +885,13 @@ id="inventario">
 
         </button>
 
-
     </div>
-
 
     <div class="subtitulo">
         ✏️ Corregir inventario
     </div>
 
-
     <div class="formulario">
-
 
         <div class="campo">
 
@@ -952,7 +906,6 @@ id="inventario">
 
         </div>
 
-
         <div class="campo">
 
             <label>
@@ -966,7 +919,6 @@ id="inventario">
 
         </div>
 
-
         <button
         class="btn btn-azul"
         onclick="corregirInventario()">
@@ -975,12 +927,9 @@ id="inventario">
 
         </button>
 
-
     </div>
 
 </section>
-
-
 
 <!-- =================================================
      EVENTOS
@@ -994,9 +943,7 @@ id="eventos">
         🎉 Eventos
     </div>
 
-
     <div class="formulario">
-
 
         <div class="campo">
 
@@ -1011,9 +958,7 @@ id="eventos">
 
         </div>
 
-
         <div class="form-row">
-
 
             <div class="campo">
 
@@ -1027,7 +972,6 @@ id="eventos">
 
             </div>
 
-
             <div class="campo">
 
                 <label>
@@ -1040,9 +984,7 @@ id="eventos">
 
             </div>
 
-
         </div>
-
 
         <div class="campo">
 
@@ -1057,7 +999,6 @@ id="eventos">
 
         </div>
 
-
         <div class="campo">
 
             <label>
@@ -1070,7 +1011,6 @@ id="eventos">
             placeholder="Ej. Paquete para 50 personas">
 
         </div>
-
 
         <div class="campo">
 
@@ -1085,9 +1025,7 @@ id="eventos">
 
         </div>
 
-
         <div class="form-row">
-
 
             <div class="campo">
 
@@ -1104,7 +1042,6 @@ id="eventos">
 
             </div>
 
-
             <div class="campo">
 
                 <label>
@@ -1120,9 +1057,7 @@ id="eventos">
 
             </div>
 
-
         </div>
-
 
         <div class="campo">
 
@@ -1138,7 +1073,6 @@ id="eventos">
 
         </div>
 
-
         <div class="campo">
 
             <label>
@@ -1152,7 +1086,6 @@ id="eventos">
 
         </div>
 
-
         <button
         class="btn btn-verde"
         id="btnGuardarEvento"
@@ -1161,7 +1094,6 @@ id="eventos">
             💾 Guardar evento
 
         </button>
-
 
         <button
         class="btn btn-gris"
@@ -1173,9 +1105,7 @@ id="eventos">
 
         </button>
 
-
     </div>
-
 
     <div
     class="titulo"
@@ -1185,13 +1115,9 @@ id="eventos">
 
     </div>
 
-
     <div id="listaEventos"></div>
 
-
 </section>
-
-
 
 <!-- =================================================
      RESUMEN
@@ -1205,9 +1131,7 @@ id="resumen">
         📊 Resumen
     </div>
 
-
     <div class="estadisticas">
-
 
         <div class="stat">
 
@@ -1223,7 +1147,6 @@ id="resumen">
 
         </div>
 
-
         <div class="stat">
 
             <div
@@ -1237,7 +1160,6 @@ id="resumen">
             </div>
 
         </div>
-
 
         <div class="stat">
 
@@ -1253,7 +1175,6 @@ id="resumen">
 
         </div>
 
-
         <div class="stat">
 
             <div
@@ -1268,24 +1189,19 @@ id="resumen">
 
         </div>
 
-
     </div>
 
-
-    <!-- DINERO ACUMULADO -->
+    <!-- DINERO PENDIENTE -->
 
     <div class="subtitulo">
-        💰 Dinero acumulado
+        💰 Dinero pendiente de pago
     </div>
-
 
     <div class="acumulado-card">
 
-
         <div class="etiqueta">
-            Dinero pendiente de pago
+            Ventas todavía no pagadas
         </div>
-
 
         <div
         class="cantidad"
@@ -1295,15 +1211,13 @@ id="resumen">
 
         </div>
 
-
         <div
         id="periodoAcumulado"
         style="font-size:13px;opacity:.8;margin-bottom:15px;">
 
-            Sin pagos registrados
+            Sin ventas pendientes
 
         </div>
-
 
         <button
         class="btn-pagado"
@@ -1313,14 +1227,11 @@ id="resumen">
 
         </button>
 
-
     </div>
-
 
     <div class="subtitulo">
         📅 Ventas de hoy
     </div>
-
 
     <div class="card">
 
@@ -1330,10 +1241,7 @@ id="resumen">
 
     </div>
 
-
 </section>
-
-
 
 <!-- =================================================
      HISTORIAL
@@ -1347,34 +1255,25 @@ id="historial">
         📋 Historial
     </div>
 
-
     <div class="subtitulo">
         🔴 Cortes de venta
     </div>
 
-
     <div id="listaCortes"></div>
-
 
     <div class="subtitulo">
         💵 Pagos registrados
     </div>
 
-
     <div id="listaPagos"></div>
-
 
     <div class="subtitulo">
         🥤 Historial de ventas
     </div>
 
-
     <div id="listaHistorial"></div>
 
-
 </section>
-
-
 
 <!-- =================================================
      AJUSTES
@@ -1388,13 +1287,11 @@ id="ajustes">
         ⚙️ Ajustes
     </div>
 
-
     <div class="ajuste-bloque">
 
         <h3>
             💰 Precios
         </h3>
-
 
         <div class="campo">
 
@@ -1409,7 +1306,6 @@ id="ajustes">
 
         </div>
 
-
         <div class="campo">
 
             <label>
@@ -1423,7 +1319,6 @@ id="ajustes">
 
         </div>
 
-
         <button
         class="btn btn-verde"
         onclick="guardarPrecios()">
@@ -1432,9 +1327,7 @@ id="ajustes">
 
         </button>
 
-
     </div>
-
 
     <div class="ajuste-bloque">
 
@@ -1447,7 +1340,6 @@ id="ajustes">
             ventas, eventos, cortes y pagos.
         </p>
 
-
         <button
         class="btn btn-azul"
         onclick="exportarDatos()">
@@ -1455,7 +1347,6 @@ id="ajustes">
             📥 Exportar respaldo
 
         </button>
-
 
         <button
         class="btn btn-gris"
@@ -1465,7 +1356,6 @@ id="ajustes">
 
         </button>
 
-
         <input
         type="file"
         id="archivoImportar"
@@ -1474,7 +1364,6 @@ id="ajustes">
         onchange="importarDatos(event)">
 
     </div>
-
 
     <div class="ajuste-bloque">
 
@@ -1487,7 +1376,6 @@ id="ajustes">
             ventas, eventos, cortes y pagos.
         </p>
 
-
         <button
         class="btn btn-rojo"
         onclick="borrarTodo()">
@@ -1498,20 +1386,15 @@ id="ajustes">
 
     </div>
 
-
 </section>
 
-
 </div>
-
-
 
 <!-- =================================================
      NAVEGACION
 ================================================= -->
 
 <nav class="navegacion">
-
 
     <button
     class="activo"
@@ -1522,7 +1405,6 @@ id="ajustes">
 
     </button>
 
-
     <button
     onclick="cambiarPagina('inventario',this)">
 
@@ -1530,7 +1412,6 @@ id="ajustes">
         Inventario
 
     </button>
-
 
     <button
     onclick="cambiarPagina('eventos',this)">
@@ -1540,7 +1421,6 @@ id="ajustes">
 
     </button>
 
-
     <button
     onclick="cambiarPagina('resumen',this)">
 
@@ -1548,7 +1428,6 @@ id="ajustes">
         Resumen
 
     </button>
-
 
     <button
     onclick="cambiarPagina('historial',this)">
@@ -1558,7 +1437,6 @@ id="ajustes">
 
     </button>
 
-
     <button
     onclick="cambiarPagina('ajustes',this)">
 
@@ -1567,16 +1445,12 @@ id="ajustes">
 
     </button>
 
-
 </nav>
-
 
 <div
 class="toast"
 id="toast">
 </div>
-
-
 
 <script>
 
@@ -1585,7 +1459,6 @@ id="toast">
 ===================================================== */
 
 const CLAVE = "el_boingazo_app";
-
 
 const datosIniciales = {
 
@@ -1613,7 +1486,6 @@ const datosIniciales = {
 
 };
 
-
 let datos = cargarDatos();
 
 let eventoEditando = null;
@@ -1630,12 +1502,10 @@ function cargarDatos(){
         const guardado =
             localStorage.getItem(CLAVE);
 
-
         if(guardado){
 
             const datosGuardados =
                 JSON.parse(guardado);
-
 
             if(!datosGuardados.inventario){
 
@@ -1646,7 +1516,6 @@ function cargarDatos(){
 
             }
 
-
             if(!datosGuardados.precios){
 
                 datosGuardados.precios={
@@ -1656,60 +1525,29 @@ function cargarDatos(){
 
             }
 
-
-            if(!Array.isArray(
-                datosGuardados.ventas
-            )){
-
+            if(!Array.isArray(datosGuardados.ventas)){
                 datosGuardados.ventas=[];
-
             }
 
-
-            if(!Array.isArray(
-                datosGuardados.entradasInventario
-            )){
-
+            if(!Array.isArray(datosGuardados.entradasInventario)){
                 datosGuardados.entradasInventario=[];
-
             }
 
-
-            if(!Array.isArray(
-                datosGuardados.eventos
-            )){
-
+            if(!Array.isArray(datosGuardados.eventos)){
                 datosGuardados.eventos=[];
-
             }
 
-
-            if(!Array.isArray(
-                datosGuardados.cortes
-            )){
-
+            if(!Array.isArray(datosGuardados.cortes)){
                 datosGuardados.cortes=[];
-
             }
 
-
-            if(!Array.isArray(
-                datosGuardados.pagos
-            )){
-
+            if(!Array.isArray(datosGuardados.pagos)){
                 datosGuardados.pagos=[];
-
             }
 
-
-            if(
-                datosGuardados.ultimoPago === undefined
-            ){
-
+            if(datosGuardados.ultimoPago === undefined){
                 datosGuardados.ultimoPago=null;
-
             }
-
 
             return datosGuardados;
 
@@ -1723,7 +1561,6 @@ function cargarDatos(){
         );
 
     }
-
 
     return JSON.parse(
         JSON.stringify(datosIniciales)
@@ -1747,14 +1584,70 @@ function guardarDatos(){
 
 
 /* =====================================================
-   UTILIDADES
+   UTILIDADES DE FECHA Y HORA
 ===================================================== */
+
+/*
+   Se usa la fecha local del teléfono/computadora.
+   Esto evita que una venta cerca de medianoche
+   aparezca con la fecha equivocada por UTC.
+*/
 
 function obtenerFecha(){
 
-    return new Date()
-    .toISOString()
-    .split("T")[0];
+    const ahora = new Date();
+
+    const año =
+        ahora.getFullYear();
+
+    const mes =
+        String(
+            ahora.getMonth()+1
+        ).padStart(2,"0");
+
+    const dia =
+        String(
+            ahora.getDate()
+        ).padStart(2,"0");
+
+    return `${año}-${mes}-${dia}`;
+
+}
+
+
+function obtenerHoraActual(){
+
+    const ahora =
+        new Date();
+
+    return `${String(
+        ahora.getHours()
+    ).padStart(2,"0")}:${String(
+        ahora.getMinutes()
+    ).padStart(2,"0")}:${String(
+        ahora.getSeconds()
+    ).padStart(2,"0")}`;
+
+}
+
+
+function convertirHoraAMinutos(hora){
+
+    if(!hora){
+        return 0;
+    }
+
+    const partes =
+        hora.split(":");
+
+    if(partes.length<2){
+        return 0;
+    }
+
+    return (
+        Number(partes[0])*60 +
+        Number(partes[1])
+    );
 
 }
 
@@ -1765,15 +1658,12 @@ function fechaBonita(fecha){
         return "Sin fecha";
     }
 
-
     const partes =
         fecha.split("-");
-
 
     if(partes.length!==3){
         return fecha;
     }
-
 
     return `${partes[2]}/${partes[1]}/${partes[0]}`;
 
@@ -1796,21 +1686,11 @@ function dinero(numero){
 
 function obtenerFechaHora(){
 
-    const ahora =
-        new Date();
-
-
     return {
 
         fecha:obtenerFecha(),
 
-        hora:ahora.toLocaleTimeString(
-            "es-MX",
-            {
-                hour:"2-digit",
-                minute:"2-digit"
-            }
-        )
+        hora:obtenerHoraActual()
 
     };
 
@@ -1836,10 +1716,8 @@ function vender(producto){
 
     }
 
-
     const fechaHora =
         obtenerFechaHora();
-
 
     const venta={
 
@@ -1856,7 +1734,6 @@ function vender(producto){
         hora:fechaHora.hora
 
     };
-
 
     datos.inventario[producto]--;
 
@@ -1889,20 +1766,32 @@ function deshacerVenta(){
 
     }
 
-
     const ultima =
         datos.ventas[
             datos.ventas.length-1
         ];
 
+    /*
+       Si la venta pertenece a un día que ya fue
+       pagado, no permitimos deshacerla porque
+       alteraría un pago histórico.
+    */
+
+    if(ventaEstaPagada(ultima)){
+
+        mostrarToast(
+            "⚠️ Esta venta ya pertenece a un pago registrado"
+        );
+
+        return;
+
+    }
 
     datos.inventario[
         ultima.producto
     ]++;
 
-
     datos.ventas.pop();
-
 
     guardarDatos();
 
@@ -1926,14 +1815,12 @@ function agregarInventario(){
             "productoAgregar"
         ).value;
 
-
     const cantidad =
         Number(
             document.getElementById(
                 "cantidadAgregar"
             ).value
         );
-
 
     if(!cantidad || cantidad<=0){
 
@@ -1945,15 +1832,12 @@ function agregarInventario(){
 
     }
 
-
     datos.inventario[
         producto
     ] += cantidad;
 
-
     const fechaHora =
         obtenerFechaHora();
-
 
     datos.entradasInventario.push({
 
@@ -1969,11 +1853,9 @@ function agregarInventario(){
 
     });
 
-
     document.getElementById(
         "cantidadAgregar"
     ).value="";
-
 
     guardarDatos();
 
@@ -1999,14 +1881,12 @@ function corregirInventario(){
             ).value
         );
 
-
     const grande =
         Number(
             document.getElementById(
                 "corregirGrande"
             ).value
         );
-
 
     if(
         chico<0 ||
@@ -2021,11 +1901,9 @@ function corregirInventario(){
 
     }
 
-
     datos.inventario.chico=chico;
 
     datos.inventario.grande=grande;
-
 
     guardarDatos();
 
@@ -2047,13 +1925,11 @@ function darCorteHoy(){
     const hoy =
         obtenerFecha();
 
-
     const ventasHoy =
         datos.ventas.filter(
             venta =>
                 venta.fecha===hoy
         );
-
 
     if(!ventasHoy.length){
 
@@ -2065,13 +1941,15 @@ function darCorteHoy(){
 
     }
 
+    /*
+       Un solo corte por día.
+    */
 
     const yaExiste =
         datos.cortes.some(
             corte =>
                 corte.fecha===hoy
         );
-
 
     if(yaExiste){
 
@@ -2083,13 +1961,11 @@ function darCorteHoy(){
 
     }
 
-
     const chicos =
         ventasHoy.filter(
             venta =>
                 venta.producto==="chico"
         ).length;
-
 
     const grandes =
         ventasHoy.filter(
@@ -2097,14 +1973,13 @@ function darCorteHoy(){
                 venta.producto==="grande"
         ).length;
 
-
     const total =
         ventasHoy.reduce(
             (suma,venta)=>
-                suma+Number(venta.precio),
+                suma+
+                Number(venta.precio),
             0
         );
-
 
     const corte={
 
@@ -2116,23 +1991,228 @@ function darCorteHoy(){
 
         grandes:grandes,
 
+        cantidad:ventasHoy.length,
+
         total:total,
 
-        cantidad:ventasHoy.length
+        hora:obtenerHoraActual()
 
     };
 
-
     datos.cortes.push(corte);
-
 
     guardarDatos();
 
     actualizarTodo();
 
+    mostrarToast(
+        `🔴 Corte guardado: ${dinero(total)}`
+    );
+
+}
+
+
+/* =====================================================
+   COMPROBAR SI UNA VENTA YA FUE PAGADA
+===================================================== */
+
+function ventaEstaPagada(venta){
+
+    if(!datos.pagos.length){
+        return false;
+    }
+
+    return datos.pagos.some(
+        pago => {
+
+            /*
+               La venta está pagada si está dentro
+               de un periodo cerrado por un pago.
+
+               Para el último día se utiliza también
+               la hora exacta del pago.
+            */
+
+            if(
+                venta.fecha <
+                pago.fechaInicio
+            ){
+                return false;
+            }
+
+            if(
+                venta.fecha >
+                pago.fechaFin
+            ){
+                return false;
+            }
+
+            /*
+               Si es antes del día final,
+               pertenece al pago.
+            */
+
+            if(
+                venta.fecha <
+                pago.fechaFin
+            ){
+                return true;
+            }
+
+            /*
+               Si es el mismo día del pago,
+               solamente se consideran las ventas
+               realizadas antes del pago.
+            */
+
+            if(
+                venta.fecha ===
+                pago.fechaFin
+            ){
+
+                if(!pago.horaFin){
+                    return true;
+                }
+
+                return (
+                    convertirHoraAMinutos(
+                        venta.hora
+                    ) <=
+                    convertirHoraAMinutos(
+                        pago.horaFin
+                    )
+                );
+
+            }
+
+            return false;
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   VENTAS PENDIENTES DE PAGO
+===================================================== */
+
+function obtenerVentasPendientesPrecisas(){
+
+    if(!datos.ventas.length){
+
+        return [];
+
+    }
+
+    return datos.ventas.filter(
+        venta =>
+            !ventaEstaPagada(venta)
+    );
+
+}
+
+
+/* =====================================================
+   MARCAR PAGADO
+===================================================== */
+
+function marcarPagado(){
+
+    const ventasPendientes =
+        obtenerVentasPendientesPrecisas();
+
+    if(!ventasPendientes.length){
+
+        mostrarToast(
+            "💰 No hay dinero pendiente de pago"
+        );
+
+        return;
+
+    }
+
+    const total =
+        ventasPendientes.reduce(
+            (suma,venta)=>
+                suma+
+                Number(venta.precio),
+            0
+        );
+
+    if(total<=0){
+
+        mostrarToast(
+            "💰 No hay dinero pendiente de pago"
+        );
+
+        return;
+
+    }
+
+    const hoy =
+        obtenerFecha();
+
+    const hora =
+        obtenerHoraActual();
+
+    const fechasPendientes =
+        ventasPendientes
+        .map(
+            venta =>
+                venta.fecha
+        )
+        .sort();
+
+    const fechaInicio =
+        fechasPendientes[0];
+
+    /*
+       Confirmación antes de registrar el pago.
+    */
+
+    const confirmar =
+        confirm(
+            `¿Registrar como PAGADO ${dinero(total)}?\n\n`+
+            `Del ${fechaBonita(fechaInicio)} `+
+            `al ${fechaBonita(hoy)}.\n\n`+
+            `Ventas: ${ventasPendientes.length}`
+        );
+
+    if(!confirmar){
+        return;
+    }
+
+    const pago={
+
+        id:Date.now(),
+
+        fechaInicio:fechaInicio,
+
+        fechaFin:hoy,
+
+        horaFin:hora,
+
+        total:total,
+
+        cantidadVentas:
+            ventasPendientes.length
+
+    };
+
+    datos.pagos.push(pago);
+
+    datos.ultimoPago={
+        fecha:hoy,
+        hora:hora
+    };
+
+    guardarDatos();
+
+    actualizarTodo();
 
     mostrarToast(
-        "🔴 Corte de hoy guardado"
+        `✅ Pago registrado: ${dinero(total)}`
     );
 
 }
@@ -2151,7 +2231,6 @@ function calcularRestante(){
             ).value
         )||0;
 
-
     const anticipo =
         Number(
             document.getElementById(
@@ -2159,13 +2238,11 @@ function calcularRestante(){
             ).value
         )||0;
 
-
     const restante =
         Math.max(
             costo-anticipo,
             0
         );
-
 
     document.getElementById(
         "eventoRestante"
@@ -2182,36 +2259,30 @@ function guardarEvento(){
             "eventoCliente"
         ).value.trim();
 
-
     const fecha =
         document.getElementById(
             "eventoFecha"
         ).value;
-
 
     const horario =
         document.getElementById(
             "eventoHorario"
         ).value;
 
-
     const ubicacion =
         document.getElementById(
             "eventoUbicacion"
         ).value.trim();
-
 
     const paquete =
         document.getElementById(
             "eventoPaquete"
         ).value.trim();
 
-
     const sabores =
         document.getElementById(
             "eventoSabores"
         ).value.trim();
-
 
     const costo =
         Number(
@@ -2220,7 +2291,6 @@ function guardarEvento(){
             ).value
         )||0;
 
-
     const anticipo =
         Number(
             document.getElementById(
@@ -2228,12 +2298,10 @@ function guardarEvento(){
             ).value
         )||0;
 
-
     const extras =
         document.getElementById(
             "eventoExtras"
         ).value.trim();
-
 
     if(!cliente){
 
@@ -2245,7 +2313,6 @@ function guardarEvento(){
 
     }
 
-
     if(!fecha){
 
         mostrarToast(
@@ -2255,7 +2322,6 @@ function guardarEvento(){
         return;
 
     }
-
 
     if(costo<0 || anticipo<0){
 
@@ -2267,7 +2333,6 @@ function guardarEvento(){
 
     }
 
-
     if(anticipo>costo){
 
         mostrarToast(
@@ -2277,7 +2342,6 @@ function guardarEvento(){
         return;
 
     }
-
 
     const evento={
 
@@ -2308,7 +2372,6 @@ function guardarEvento(){
 
     };
 
-
     if(eventoEditando){
 
         const indice =
@@ -2317,13 +2380,11 @@ function guardarEvento(){
                     e.id===eventoEditando
             );
 
-
         if(indice!==-1){
 
             datos.eventos[indice]=evento;
 
         }
-
 
         mostrarToast(
             "✅ Evento actualizado"
@@ -2335,13 +2396,11 @@ function guardarEvento(){
             evento
         );
 
-
         mostrarToast(
             "🎉 Evento guardado"
         );
 
     }
-
 
     guardarDatos();
 
@@ -2364,83 +2423,68 @@ function editarEvento(id){
                 e.id===id
         );
 
-
     if(!evento){
         return;
     }
 
-
     eventoEditando=id;
-
 
     document.getElementById(
         "eventoCliente"
     ).value=
         evento.cliente||"";
 
-
     document.getElementById(
         "eventoFecha"
     ).value=
         evento.fecha||"";
-
 
     document.getElementById(
         "eventoHorario"
     ).value=
         evento.horario||"";
 
-
     document.getElementById(
         "eventoUbicacion"
     ).value=
         evento.ubicacion||"";
-
 
     document.getElementById(
         "eventoPaquete"
     ).value=
         evento.paquete||"";
 
-
     document.getElementById(
         "eventoSabores"
     ).value=
         evento.sabores||"";
-
 
     document.getElementById(
         "eventoCosto"
     ).value=
         evento.costo||0;
 
-
     document.getElementById(
         "eventoAnticipo"
     ).value=
         evento.anticipo||0;
-
 
     document.getElementById(
         "eventoExtras"
     ).value=
         evento.extras||"";
 
-
     calcularRestante();
-
 
     document.getElementById(
         "btnGuardarEvento"
     ).textContent=
         "💾 Guardar cambios";
 
-
     document.getElementById(
         "btnCancelarEdicion"
     ).style.display=
         "block";
-
 
     cambiarPagina(
         "eventos",
@@ -2448,7 +2492,6 @@ function editarEvento(id){
             ".navegacion button"
         )[2]
     );
-
 
     window.scrollTo({
         top:0,
@@ -2470,11 +2513,9 @@ function eliminarEvento(id){
                 e.id===id
         );
 
-
     if(!evento){
         return;
     }
-
 
     if(!confirm(
         `¿Eliminar el evento de ${evento.cliente}?`
@@ -2482,20 +2523,17 @@ function eliminarEvento(id){
         return;
     }
 
-
     datos.eventos =
         datos.eventos.filter(
             e =>
                 e.id!==id
         );
 
-
     if(eventoEditando===id){
 
         limpiarFormularioEvento();
 
     }
-
 
     guardarDatos();
 
@@ -2516,62 +2554,50 @@ function limpiarFormularioEvento(){
 
     eventoEditando=null;
 
-
     document.getElementById(
         "eventoCliente"
     ).value="";
-
 
     document.getElementById(
         "eventoFecha"
     ).value="";
 
-
     document.getElementById(
         "eventoHorario"
     ).value="";
-
 
     document.getElementById(
         "eventoUbicacion"
     ).value="";
 
-
     document.getElementById(
         "eventoPaquete"
     ).value="";
-
 
     document.getElementById(
         "eventoSabores"
     ).value="";
 
-
     document.getElementById(
         "eventoCosto"
     ).value="";
-
 
     document.getElementById(
         "eventoAnticipo"
     ).value="";
 
-
     document.getElementById(
         "eventoRestante"
     ).value="$0";
-
 
     document.getElementById(
         "eventoExtras"
     ).value="";
 
-
     document.getElementById(
         "btnGuardarEvento"
     ).textContent=
         "💾 Guardar evento";
-
 
     document.getElementById(
         "btnCancelarEdicion"
@@ -2603,7 +2629,6 @@ function actualizarEventos(){
             "listaEventos"
         );
 
-
     if(!datos.eventos.length){
 
         contenedor.innerHTML=`
@@ -2620,7 +2645,6 @@ function actualizarEventos(){
 
     }
 
-
     const eventosOrdenados =
         datos.eventos
         .slice()
@@ -2632,18 +2656,15 @@ function actualizarEventos(){
                         `${a.fecha}T${a.horario||"00:00"}`
                     );
 
-
                 const fechaB =
                     new Date(
                         `${b.fecha}T${b.horario||"00:00"}`
                     );
 
-
                 return fechaA-fechaB;
 
             }
         );
-
 
     contenedor.innerHTML =
         eventosOrdenados
@@ -2731,226 +2752,6 @@ function actualizarEventos(){
 
 
 /* =====================================================
-   ACUMULADO DE DINERO
-===================================================== */
-
-function obtenerVentasPendientes(){
-
-    let fechaInicio =
-        datos.ultimoPago;
-
-
-    if(!fechaInicio){
-
-        if(!datos.ventas.length){
-
-            return [];
-
-        }
-
-
-        const fechas =
-            datos.ventas
-            .map(v=>v.fecha)
-            .sort();
-
-
-        fechaInicio =
-            fechas[0];
-
-    }
-
-
-    return datos.ventas.filter(
-        venta =>
-            venta.fecha>=fechaInicio
-    );
-
-}
-
-
-/*
-   IMPORTANTE:
-   Si existe un último pago con fecha X,
-   las ventas del mismo día X se consideran
-   posteriores al pago solamente si fueron
-   hechas después del pago.
-
-   Para hacerlo sencillo y preciso usamos
-   también la hora del pago.
-*/
-
-function obtenerVentasPendientesPrecisas(){
-
-    if(!datos.ventas.length){
-
-        return [];
-
-    }
-
-
-    if(!datos.pagos.length){
-
-        return datos.ventas.slice();
-
-    }
-
-
-    const ultimoPago =
-        datos.pagos[
-            datos.pagos.length-1
-        ];
-
-
-    return datos.ventas.filter(
-        venta=>{
-
-            if(
-                venta.fecha >
-                ultimoPago.fechaFin
-            ){
-
-                return true;
-
-            }
-
-
-            if(
-                venta.fecha <
-                ultimoPago.fechaFin
-            ){
-
-                return false;
-
-            }
-
-
-            if(
-                !ultimoPago.horaFin
-            ){
-
-                return false;
-
-            }
-
-
-            return (
-                venta.hora &&
-                venta.hora >
-                ultimoPago.horaFin
-            );
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   MARCAR PAGADO
-===================================================== */
-
-function marcarPagado(){
-
-    const ventasPendientes =
-        obtenerVentasPendientesPrecisas();
-
-
-    const total =
-        ventasPendientes.reduce(
-            (suma,venta)=>
-                suma+Number(venta.precio),
-            0
-        );
-
-
-    if(total<=0){
-
-        mostrarToast(
-            "💰 No hay dinero pendiente de pago"
-        );
-
-        return;
-
-    }
-
-
-    const hoy =
-        obtenerFecha();
-
-
-    const hora =
-        new Date()
-        .toLocaleTimeString(
-            "es-MX",
-            {
-                hour:"2-digit",
-                minute:"2-digit"
-            }
-        );
-
-
-    let fechaInicio;
-
-
-    if(datos.pagos.length){
-
-        const ultimoPago =
-            datos.pagos[
-                datos.pagos.length-1
-            ];
-
-
-        fechaInicio =
-            ultimoPago.fechaFin;
-
-    }else{
-
-        fechaInicio =
-            ventasPendientes
-            .map(v=>v.fecha)
-            .sort()[0];
-
-    }
-
-
-    const pago={
-
-        id:Date.now(),
-
-        fechaInicio:fechaInicio,
-
-        fechaFin:hoy,
-
-        horaFin:hora,
-
-        total:total,
-
-        cantidadVentas:
-            ventasPendientes.length
-
-    };
-
-
-    datos.pagos.push(pago);
-
-
-    datos.ultimoPago=hoy;
-
-
-    guardarDatos();
-
-    actualizarTodo();
-
-
-    mostrarToast(
-        `✅ Pago registrado: ${dinero(total)}`
-    );
-
-}
-
-
-/* =====================================================
    ACTUALIZAR INICIO
 ===================================================== */
 
@@ -2959,37 +2760,32 @@ function actualizarInicio(){
     const hoy =
         obtenerFecha();
 
-
     const ventasHoy =
         datos.ventas.filter(
             venta =>
                 venta.fecha===hoy
         );
 
-
     const cantidad =
         ventasHoy.length;
-
 
     const dineroHoy =
         ventasHoy.reduce(
             (total,venta)=>
-                total+Number(venta.precio),
+                total+
+                Number(venta.precio),
             0
         );
-
 
     document.getElementById(
         "ventasHoyCantidad"
     ).textContent=
         cantidad;
 
-
     document.getElementById(
         "ventasHoyDinero"
     ).textContent=
         dinero(dineroHoy);
-
 
     document.getElementById(
         "inventarioTotal"
@@ -3001,12 +2797,10 @@ function actualizarInicio(){
             datos.inventario.grande
         );
 
-
     document.getElementById(
         "eventosPendientes"
     ).textContent=
         datos.eventos.length;
-
 
     document.getElementById(
         "precioInicioChico"
@@ -3015,7 +2809,6 @@ function actualizarInicio(){
             datos.precios.chico
         );
 
-
     document.getElementById(
         "precioInicioGrande"
     ).textContent=
@@ -3023,24 +2816,20 @@ function actualizarInicio(){
             datos.precios.grande
         );
 
-
     document.getElementById(
         "stockInicioChico"
     ).textContent=
         datos.inventario.chico;
-
 
     document.getElementById(
         "stockInicioGrande"
     ).textContent=
         datos.inventario.grande;
 
-
     const ultimaVenta =
         datos.ventas[
             datos.ventas.length-1
         ];
-
 
     if(!ultimaVenta){
 
@@ -3071,12 +2860,13 @@ function actualizarInicio(){
                 ultimaVenta.fecha
             )}
 
-            · ${ultimaVenta.hora}
+            · ${formatearHora(
+                ultimaVenta.hora
+            )}
 
         `;
 
     }
-
 
     const corteHoy =
         datos.cortes.find(
@@ -3084,21 +2874,28 @@ function actualizarInicio(){
                 corte.fecha===hoy
         );
 
-
     const estado =
         document.getElementById(
             "estadoCorteHoy"
         );
 
-
     if(corteHoy){
 
         estado.innerHTML=`
 
-            ✅ Corte registrado hoy:
+            ✅ Corte registrado:
+
             <strong>
                 ${dinero(corteHoy.total)}
             </strong>
+
+            <br>
+
+            🥤 Chico:
+            ${corteHoy.chicos}
+
+            · Grande:
+            ${corteHoy.grandes}
 
         `;
 
@@ -3108,6 +2905,46 @@ function actualizarInicio(){
             "⚠️ El corte de hoy todavía no se ha realizado.";
 
     }
+
+}
+
+
+/* =====================================================
+   FORMATO DE HORA
+===================================================== */
+
+function formatearHora(hora){
+
+    if(!hora){
+        return "";
+    }
+
+    const partes =
+        hora.split(":");
+
+    if(partes.length<2){
+        return hora;
+    }
+
+    let horas =
+        Number(partes[0]);
+
+    const minutos =
+        partes[1];
+
+    const ampm =
+        horas>=12
+        ? "p. m."
+        : "a. m.";
+
+    horas =
+        horas%12;
+
+    if(horas===0){
+        horas=12;
+    }
+
+    return `${horas}:${minutos} ${ampm}`;
 
 }
 
@@ -3123,12 +2960,10 @@ function actualizarInventario(){
     ).textContent=
         datos.inventario.chico;
 
-
     document.getElementById(
         "stockGrande"
     ).textContent=
         datos.inventario.grande;
-
 
     document.getElementById(
         "precioInventarioChico"
@@ -3137,7 +2972,6 @@ function actualizarInventario(){
             datos.precios.chico
         );
 
-
     document.getElementById(
         "precioInventarioGrande"
     ).textContent=
@@ -3145,12 +2979,10 @@ function actualizarInventario(){
             datos.precios.grande
         );
 
-
     document.getElementById(
         "corregirChico"
     ).value=
         datos.inventario.chico;
-
 
     document.getElementById(
         "corregirGrande"
@@ -3169,68 +3001,59 @@ function actualizarResumen(){
     const hoy =
         obtenerFecha();
 
-
     const ventasHoy =
         datos.ventas.filter(
             venta =>
                 venta.fecha===hoy
         );
 
-
     const cantidadHoy =
         ventasHoy.length;
-
 
     const dineroHoy =
         ventasHoy.reduce(
             (total,venta)=>
-                total+Number(venta.precio),
+                total+
+                Number(venta.precio),
             0
         );
-
 
     document.getElementById(
         "resumenHoyCantidad"
     ).textContent=
         cantidadHoy;
 
-
     document.getElementById(
         "resumenHoyDinero"
     ).textContent=
         dinero(dineroHoy);
 
+    /* SEMANA */
 
     const fechaActual =
         new Date();
 
-
     const dia =
         fechaActual.getDay();
-
 
     const diferencia =
         dia===0
         ? 6
         : dia-1;
 
-
     const inicioSemana =
         new Date(
             fechaActual
         );
-
 
     inicioSemana.setDate(
         fechaActual.getDate()-
         diferencia
     );
 
-
     inicioSemana.setHours(
         0,0,0,0
     );
-
 
     const ventasSemana =
         datos.ventas.filter(
@@ -3242,7 +3065,6 @@ function actualizarResumen(){
                         "T00:00:00"
                     );
 
-
                 return (
                     fechaVenta>=
                     inicioSemana
@@ -3251,12 +3073,10 @@ function actualizarResumen(){
             }
         );
 
-
     document.getElementById(
         "resumenSemanaCantidad"
     ).textContent=
         ventasSemana.length;
-
 
     document.getElementById(
         "resumenSemanaDinero"
@@ -3272,12 +3092,10 @@ function actualizarResumen(){
             )
         );
 
-
-    /* ACUMULADO */
+    /* DINERO PENDIENTE */
 
     const pendientes =
         obtenerVentasPendientesPrecisas();
-
 
     const acumulado =
         pendientes.reduce(
@@ -3289,18 +3107,15 @@ function actualizarResumen(){
             0
         );
 
-
     document.getElementById(
         "dineroAcumulado"
     ).textContent=
         dinero(acumulado);
 
-
     const periodo =
         document.getElementById(
             "periodoAcumulado"
         );
-
 
     if(!pendientes.length){
 
@@ -3311,17 +3126,18 @@ function actualizarResumen(){
 
         const fechas =
             pendientes
-            .map(v=>v.fecha)
+            .map(
+                v =>
+                    v.fecha
+            )
             .sort();
 
-
         periodo.textContent=
-            `Acumulando desde ${fechaBonita(
+            `Pendiente desde ${fechaBonita(
                 fechas[0]
-            )}`;
+            )} · ${pendientes.length} ventas`;
 
     }
-
 
     /* VENTAS HOY */
 
@@ -3358,7 +3174,9 @@ function actualizarResumen(){
                         <br>
 
                         <small>
-                            ${venta.hora}
+                            ${formatearHora(
+                                venta.hora
+                            )}
                         </small>
 
                     </div>
@@ -3398,7 +3216,6 @@ function actualizarCortes(){
             "listaCortes"
         );
 
-
     if(!datos.cortes.length){
 
         contenedor.innerHTML=`
@@ -3415,7 +3232,6 @@ function actualizarCortes(){
 
     }
 
-
     const cortes =
         datos.cortes
         .slice()
@@ -3425,7 +3241,6 @@ function actualizarCortes(){
                     a.fecha
                 )
         );
-
 
     contenedor.innerHTML =
         cortes
@@ -3444,14 +3259,14 @@ function actualizarCortes(){
                     </div>
 
                     <div>
-                        🥤 Chicos:
+                        🥤 Chico:
                         <strong>
                             ${corte.chicos}
                         </strong>
                     </div>
 
                     <div>
-                        🥤 Grandes:
+                        🥤 Grande:
                         <strong>
                             ${corte.grandes}
                         </strong>
@@ -3463,6 +3278,17 @@ function actualizarCortes(){
                             ${corte.cantidad}
                         </strong>
                     </div>
+
+                    ${
+                        corte.hora
+                        ?
+                        `<div>
+                            🕐 Hora del corte:
+                            ${formatearHora(corte.hora)}
+                        </div>`
+                        :
+                        ""
+                    }
 
                     <div class="corte-total">
                         💰 ${dinero(
@@ -3490,7 +3316,6 @@ function actualizarPagos(){
             "listaPagos"
         );
 
-
     if(!datos.pagos.length){
 
         contenedor.innerHTML=`
@@ -3507,12 +3332,10 @@ function actualizarPagos(){
 
     }
 
-
     const pagos =
         datos.pagos
         .slice()
         .reverse();
-
 
     contenedor.innerHTML =
         pagos
@@ -3528,6 +3351,7 @@ function actualizarPagos(){
                     <div style="margin-top:7px;">
 
                         📅 Del
+
                         <strong>
                             ${fechaBonita(
                                 pago.fechaInicio
@@ -3545,7 +3369,10 @@ function actualizarPagos(){
                     </div>
 
                     <div>
-                        🕐 ${pago.horaFin || ""}
+                        🕐 Pago realizado:
+                        ${formatearHora(
+                            pago.horaFin
+                        )}
                     </div>
 
                     <div>
@@ -3579,7 +3406,6 @@ function actualizarVentasHistorial(){
             "listaHistorial"
         );
 
-
     if(!datos.ventas.length){
 
         contenedor.innerHTML=`
@@ -3596,12 +3422,10 @@ function actualizarVentasHistorial(){
 
     }
 
-
     const ventas =
         datos.ventas
         .slice()
         .reverse();
-
 
     contenedor.innerHTML =
         ventas
@@ -3628,7 +3452,19 @@ function actualizarVentasHistorial(){
                         venta.fecha
                     )}
 
-                    · 🕐 ${venta.hora}
+                    · 🕐 ${formatearHora(
+                        venta.hora
+                    )}
+
+                    <br>
+
+                    <small>
+                        ${
+                            ventaEstaPagada(venta)
+                            ? "✅ Pagada"
+                            : "💰 Pendiente de pago"
+                        }
+                    </small>
 
                 </div>
 
@@ -3650,7 +3486,6 @@ function actualizarAjustes(){
     ).value=
         datos.precios.chico;
 
-
     document.getElementById(
         "precioGrande"
     ).value=
@@ -3668,14 +3503,12 @@ function guardarPrecios(){
             ).value
         );
 
-
     const grande =
         Number(
             document.getElementById(
                 "precioGrande"
             ).value
         );
-
 
     if(
         chico<0 ||
@@ -3692,11 +3525,9 @@ function guardarPrecios(){
 
     }
 
-
     datos.precios.chico=chico;
 
     datos.precios.grande=grande;
-
 
     guardarDatos();
 
@@ -3722,7 +3553,6 @@ function exportarDatos(){
             2
         );
 
-
     const archivo =
         new Blob(
             [contenido],
@@ -3731,32 +3561,26 @@ function exportarDatos(){
             }
         );
 
-
     const url =
         URL.createObjectURL(
             archivo
         );
-
 
     const enlace =
         document.createElement(
             "a"
         );
 
-
     enlace.href=url;
 
     enlace.download=
         "el-boingazo-respaldo.json";
 
-
     enlace.click();
-
 
     URL.revokeObjectURL(
         url
     );
-
 
     mostrarToast(
         "📥 Respaldo preparado"
@@ -3774,15 +3598,12 @@ function importarDatos(event){
     const archivo =
         event.target.files[0];
 
-
     if(!archivo){
         return;
     }
 
-
     const lector =
         new FileReader();
-
 
     lector.onload =
         function(e){
@@ -3793,7 +3614,6 @@ function importarDatos(event){
                     JSON.parse(
                         e.target.result
                     );
-
 
                 if(
                     !importado.inventario ||
@@ -3806,76 +3626,56 @@ function importarDatos(event){
 
                 }
 
-
                 if(!Array.isArray(
                     importado.ventas
                 )){
-
                     importado.ventas=[];
-
                 }
-
 
                 if(!Array.isArray(
                     importado.entradasInventario
                 )){
-
                     importado.entradasInventario=[];
-
                 }
-
 
                 if(!Array.isArray(
                     importado.eventos
                 )){
-
                     importado.eventos=[];
-
                 }
-
 
                 if(!Array.isArray(
                     importado.cortes
                 )){
-
                     importado.cortes=[];
-
                 }
-
 
                 if(!Array.isArray(
                     importado.pagos
                 )){
-
                     importado.pagos=[];
-
                 }
-
 
                 if(
                     importado.ultimoPago ===
                     undefined
                 ){
-
                     importado.ultimoPago=null;
-
                 }
 
-
                 datos=importado;
-
 
                 guardarDatos();
 
                 actualizarTodo();
 
-
                 mostrarToast(
                     "✅ Respaldo importado"
                 );
 
-
             }catch(error){
+
+                console.log(error);
 
                 mostrarToast(
                     "❌ El archivo no es válido"
@@ -3885,11 +3685,9 @@ function importarDatos(event){
 
         };
 
-
     lector.readAsText(
         archivo
     );
-
 
     event.target.value="";
 
@@ -3910,7 +3708,6 @@ function borrarTodo(){
 
     }
 
-
     if(!confirm(
         "Esto eliminará inventario, ventas, eventos, cortes y pagos. ¿Continuar?"
     )){
@@ -3919,14 +3716,12 @@ function borrarTodo(){
 
     }
 
-
     datos =
         JSON.parse(
             JSON.stringify(
                 datosIniciales
             )
         );
-
 
     guardarDatos();
 
@@ -3960,12 +3755,10 @@ function cambiarPagina(
         }
     );
 
-
     const seleccionada =
         document.getElementById(
             pagina
         );
-
 
     if(seleccionada){
 
@@ -3974,7 +3767,6 @@ function cambiarPagina(
         );
 
     }
-
 
     document
     .querySelectorAll(
@@ -3988,7 +3780,6 @@ function cambiarPagina(
         }
     );
 
-
     if(boton){
 
         boton.classList.add(
@@ -3996,7 +3787,6 @@ function cambiarPagina(
         );
 
     }
-
 
     window.scrollTo({
         top:0,
@@ -4012,7 +3802,6 @@ function cambiarPagina(
 
 let toastTimer;
 
-
 function mostrarToast(
     mensaje
 ){
@@ -4022,27 +3811,25 @@ function mostrarToast(
             "toast"
         );
 
-
     toast.textContent=
         mensaje;
-
 
     toast.classList.add(
         "mostrar"
     );
 
-
     clearTimeout(
         toastTimer
     );
 
-
     toastTimer =
         setTimeout(
             ()=>{
+
                 toast.classList.remove(
                     "mostrar"
                 );
+
             },
             2500
         );
@@ -4081,3 +3868,4 @@ actualizarTodo();
 
 </body>
 </html>
+```
