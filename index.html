@@ -1,575 +1,789 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <meta name="theme-color" content="#111111">
 
-<link rel="apple-touch-icon" href="Apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
-<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon"
+href="Apple-touch-icon.png">
 
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="El Boingazo">
+<link rel="icon"
+type="image/png"
+sizes="512x512"
+href="icon-512.png">
+
+<link rel="manifest"
+href="manifest.json">
+
+<meta name="apple-mobile-web-app-capable"
+content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style"
+content="black">
+
+<meta name="apple-mobile-web-app-title"
+content="El Boingazo">
 
 <title>El Boingazo</title>
+
 
 <style>
 
 :root {
-    --rojo: #e53935;
-    --rojo-oscuro: #b71c1c;
-    --verde: #2e7d32;
-    --azul: #1976d2;
-    --gris: #666;
-    --gris-claro: #f3f3f3;
-    --negro: #111;
-    --blanco: #fff;
+    --rojo:#e53935;
+    --rojo-oscuro:#b71c1c;
+    --verde:#2e7d32;
+    --azul:#1976d2;
+    --negro:#111;
+    --gris:#666;
+    --gris-claro:#f3f3f3;
+    --blanco:#fff;
 }
 
 * {
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
 }
 
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    background: #f5f5f5;
-    color: #222;
-    padding-bottom: 85px;
+    margin:0;
+    font-family:-apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,sans-serif;
+    background:#f5f5f5;
+    color:#222;
+    padding-bottom:90px;
 }
 
 header {
-    background: var(--negro);
-    color: white;
-    padding: 18px 15px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    background:#111;
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 25px;
+    margin:0;
+    font-size:25px;
 }
 
 header p {
-    margin: 5px 0 0;
-    font-size: 13px;
-    opacity: .8;
+    margin:5px 0 0;
+    font-size:13px;
+    opacity:.8;
 }
 
 .contenedor {
-    max-width: 700px;
-    margin: auto;
-    padding: 15px;
+    max-width:700px;
+    margin:auto;
+    padding:15px;
 }
 
 .pagina {
-    display: none;
+    display:none;
 }
 
 .pagina.activa {
-    display: block;
+    display:block;
 }
 
 .titulo {
-    font-size: 24px;
-    font-weight: 800;
-    margin: 10px 0 18px;
+    font-size:24px;
+    font-weight:800;
+    margin:10px 0 18px;
 }
 
 .subtitulo {
-    font-size: 16px;
-    font-weight: 700;
-    margin: 22px 0 10px;
+    font-size:16px;
+    font-weight:700;
+    margin:22px 0 10px;
 }
 
-/* TARJETAS */
-
 .card {
-    background: white;
-    border-radius: 18px;
-    padding: 18px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+    background:white;
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.07);
 }
 
 .card h3 {
-    margin: 0 0 8px;
+    margin:0 0 8px;
 }
 
 .card p {
-    margin: 6px 0;
+    margin:6px 0;
 }
 
-/* INICIO */
-
-.ventas-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-.venta-card {
-    background: white;
-    border-radius: 20px;
-    padding: 20px 12px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,.08);
-}
-
-.venta-card .emoji {
-    font-size: 42px;
-}
-
-.venta-card h3 {
-    margin: 7px 0;
-}
-
-.venta-card .precio {
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--rojo);
-}
-
-.btn-vender {
-    width: 100%;
-    border: 0;
-    background: var(--rojo);
-    color: white;
-    font-size: 17px;
-    font-weight: 800;
-    padding: 14px;
-    border-radius: 14px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.btn-vender:active {
-    transform: scale(.97);
-}
 
 /* ESTADISTICAS */
 
 .estadisticas {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
 }
 
 .stat {
-    background: white;
-    border-radius: 17px;
-    padding: 18px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    background:white;
+    border-radius:17px;
+    padding:18px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
 
 .stat .numero {
-    font-size: 27px;
-    font-weight: 900;
+    font-size:27px;
+    font-weight:900;
 }
 
 .stat .texto {
-    font-size: 13px;
-    color: #666;
-    margin-top: 4px;
+    font-size:13px;
+    color:#666;
+    margin-top:4px;
 }
 
-/* INVENTARIO */
 
-.inventario-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+/* VENTAS */
+
+.ventas-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
 }
 
-.inventario-card {
-    background: white;
-    border-radius: 18px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+.venta-card {
+    background:white;
+    border-radius:20px;
+    padding:20px 12px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
-.inventario-card .cantidad {
-    font-size: 42px;
-    font-weight: 900;
-    margin: 8px 0;
+.venta-card .emoji {
+    font-size:42px;
 }
 
-.inventario-card .nombre {
-    font-weight: 700;
+.venta-card h3 {
+    margin:7px 0;
 }
 
-.inventario-card .precio {
-    color: var(--rojo);
-    font-weight: 700;
+.venta-card .precio {
+    font-size:22px;
+    font-weight:800;
+    color:var(--rojo);
 }
+
+.btn-vender {
+    width:100%;
+    border:0;
+    background:var(--rojo);
+    color:white;
+    font-size:17px;
+    font-weight:800;
+    padding:14px;
+    border-radius:14px;
+    margin-top:10px;
+    cursor:pointer;
+}
+
+.btn-vender:active {
+    transform:scale(.97);
+}
+
 
 /* FORMULARIOS */
 
 .formulario {
-    background: white;
-    padding: 18px;
-    border-radius: 18px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    background:white;
+    padding:18px;
+    border-radius:18px;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
 
 .campo {
-    margin-bottom: 15px;
+    margin-bottom:15px;
 }
 
 .campo label {
-    display: block;
-    font-weight: 700;
-    margin-bottom: 7px;
+    display:block;
+    font-weight:700;
+    margin-bottom:7px;
 }
 
 .campo input,
 .campo select,
 .campo textarea {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #ddd;
-    border-radius: 11px;
-    font-size: 16px;
-    background: white;
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:11px;
+    font-size:16px;
+    background:white;
 }
 
 .campo textarea {
-    min-height: 80px;
-    resize: vertical;
+    min-height:80px;
+    resize:vertical;
 }
 
 .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
 }
 
 .btn {
-    width: 100%;
-    border: 0;
-    padding: 14px;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 800;
-    margin-top: 7px;
-    cursor: pointer;
+    width:100%;
+    border:0;
+    padding:14px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:800;
+    margin-top:7px;
+    cursor:pointer;
 }
 
 .btn-rojo {
-    background: var(--rojo);
-    color: white;
+    background:var(--rojo);
+    color:white;
 }
 
 .btn-verde {
-    background: var(--verde);
-    color: white;
+    background:var(--verde);
+    color:white;
 }
 
 .btn-azul {
-    background: var(--azul);
-    color: white;
+    background:var(--azul);
+    color:white;
 }
 
 .btn-gris {
-    background: #e0e0e0;
-    color: #222;
+    background:#e0e0e0;
+    color:#222;
 }
 
 .btn-negro {
-    background: #111;
-    color: white;
+    background:#111;
+    color:white;
 }
+
+
+/* INVENTARIO */
+
+.inventario-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.inventario-card {
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.07);
+}
+
+.inventario-card .cantidad {
+    font-size:42px;
+    font-weight:900;
+    margin:8px 0;
+}
+
+.inventario-card .nombre {
+    font-weight:700;
+}
+
+.inventario-card .precio {
+    color:var(--rojo);
+    font-weight:700;
+}
+
 
 /* EVENTOS */
 
 .evento-card {
-    background: white;
-    border-radius: 18px;
-    padding: 18px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.07);
-    border-left: 5px solid var(--rojo);
+    background:white;
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.07);
+    border-left:5px solid var(--rojo);
 }
 
 .evento-titulo {
-    font-size: 20px;
-    font-weight: 900;
-    margin-bottom: 12px;
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:12px;
 }
 
 .evento-dato {
-    margin: 7px 0;
-    line-height: 1.35;
-}
-
-.evento-dato strong {
-    display: inline-block;
+    margin:7px 0;
+    line-height:1.35;
 }
 
 .evento-restante {
-    background: #ffebee;
-    color: var(--rojo-oscuro);
-    padding: 12px;
-    border-radius: 10px;
-    font-weight: 900;
-    margin: 12px 0;
+    background:#ffebee;
+    color:var(--rojo-oscuro);
+    padding:12px;
+    border-radius:10px;
+    font-weight:900;
+    margin:12px 0;
 }
 
 .evento-botones {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-top: 15px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:15px;
 }
 
 .evento-botones button {
-    border: 0;
-    padding: 12px;
-    border-radius: 10px;
-    font-weight: 800;
-    cursor: pointer;
+    border:0;
+    padding:12px;
+    border-radius:10px;
+    font-weight:800;
+    cursor:pointer;
 }
 
 .btn-editar {
-    background: #e3f2fd;
-    color: #1565c0;
+    background:#e3f2fd;
+    color:#1565c0;
 }
 
 .btn-eliminar {
-    background: #ffebee;
-    color: #c62828;
+    background:#ffebee;
+    color:#c62828;
 }
 
-.vacio {
-    text-align: center;
-    background: white;
-    padding: 30px 15px;
-    border-radius: 18px;
-    color: #777;
+
+/* CORTE */
+
+.corte-card {
+    background:white;
+    border-radius:18px;
+    padding:18px;
+    margin-top:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.07);
+    border-left:5px solid var(--azul);
 }
 
-/* LISTAS */
+.corte-titulo {
+    font-size:18px;
+    font-weight:900;
+    margin-bottom:10px;
+}
+
+.corte-total {
+    font-size:26px;
+    font-weight:900;
+    color:var(--rojo);
+    margin-top:10px;
+}
+
+
+/* ACUMULADO */
+
+.acumulado-card {
+    background:#111;
+    color:white;
+    border-radius:20px;
+    padding:22px;
+    text-align:center;
+    margin:15px 0;
+}
+
+.acumulado-card .etiqueta {
+    font-size:14px;
+    opacity:.8;
+}
+
+.acumulado-card .cantidad {
+    font-size:38px;
+    font-weight:900;
+    margin:8px 0 15px;
+}
+
+.btn-pagado {
+    width:100%;
+    border:0;
+    background:#2e7d32;
+    color:white;
+    padding:15px;
+    border-radius:13px;
+    font-size:17px;
+    font-weight:900;
+    cursor:pointer;
+}
+
+.btn-pagado:active {
+    transform:scale(.98);
+}
+
+
+/* HISTORIAL */
 
 .lista {
-    margin-top: 12px;
+    margin-top:12px;
 }
 
 .lista-item {
-    background: white;
-    border-radius: 15px;
-    padding: 15px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    background:white;
+    border-radius:15px;
+    padding:15px;
+    margin-bottom:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
 }
 
 .lista-item strong {
-    display: block;
-    margin-bottom: 5px;
+    display:block;
+    margin-bottom:5px;
 }
 
 .lista-item small {
-    color: #777;
+    color:#777;
 }
+
+.pago-card {
+    background:white;
+    border-radius:16px;
+    padding:17px;
+    margin-bottom:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    border-left:5px solid var(--verde);
+}
+
+.pago-total {
+    font-size:24px;
+    font-weight:900;
+    color:var(--verde);
+    margin-top:8px;
+}
+
 
 /* AJUSTES */
 
 .ajuste-bloque {
-    background: white;
-    border-radius: 18px;
-    padding: 18px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    background:white;
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
 
 .ajuste-bloque h3 {
-    margin-top: 0;
+    margin-top:0;
 }
+
+
+/* VACIO */
+
+.vacio {
+    text-align:center;
+    background:white;
+    padding:30px 15px;
+    border-radius:18px;
+    color:#777;
+}
+
 
 /* NAVEGACION */
 
 .navegacion {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: white;
-    border-top: 1px solid #ddd;
-    display: flex;
-    z-index: 200;
-    padding: 5px 2px calc(5px + env(safe-area-inset-bottom));
-    box-shadow: 0 -2px 10px rgba(0,0,0,.08);
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    background:white;
+    border-top:1px solid #ddd;
+    display:flex;
+    z-index:200;
+    padding:5px 2px calc(5px + env(safe-area-inset-bottom));
+    box-shadow:0 -2px 10px rgba(0,0,0,.08);
 }
 
 .navegacion button {
-    flex: 1;
-    border: 0;
-    background: transparent;
-    padding: 7px 2px;
-    font-size: 9px;
-    color: #777;
-    cursor: pointer;
+    flex:1;
+    border:0;
+    background:transparent;
+    padding:7px 2px;
+    font-size:9px;
+    color:#777;
+    cursor:pointer;
 }
 
 .navegacion button span {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 2px;
+    display:block;
+    font-size:20px;
+    margin-bottom:2px;
 }
 
 .navegacion button.activo {
-    color: var(--rojo);
-    font-weight: 800;
+    color:var(--rojo);
+    font-weight:800;
 }
+
 
 /* TOAST */
 
 .toast {
-    position: fixed;
-    left: 50%;
-    bottom: 90px;
-    transform: translateX(-50%);
-    background: #222;
-    color: white;
-    padding: 13px 20px;
-    border-radius: 30px;
-    font-weight: 700;
-    z-index: 500;
-    display: none;
-    max-width: 90%;
-    text-align: center;
+    position:fixed;
+    left:50%;
+    bottom:90px;
+    transform:translateX(-50%);
+    background:#222;
+    color:white;
+    padding:13px 20px;
+    border-radius:30px;
+    font-weight:700;
+    z-index:500;
+    display:none;
+    max-width:90%;
+    text-align:center;
 }
 
 .toast.mostrar {
-    display: block;
+    display:block;
 }
 
-/* RESPONSIVE */
 
-@media (max-width: 420px) {
+@media (max-width:420px) {
 
     .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .ventas-grid,
-    .inventario-grid {
-        gap: 8px;
-    }
-
-    .venta-card {
-        padding: 15px 8px;
+        grid-template-columns:1fr;
     }
 
     .navegacion button {
-        font-size: 8px;
+        font-size:8px;
     }
 
     .navegacion button span {
-        font-size: 18px;
+        font-size:18px;
     }
+
 }
 
 </style>
 </head>
 
+
 <body>
 
+
 <header>
+
     <h1>🥤 El Boingazo</h1>
-    <p>Inventario · Ventas · Eventos</p>
+
+    <p>
+        Inventario · Ventas · Eventos
+    </p>
+
 </header>
+
 
 <div class="contenedor">
 
-<!-- =========================
+
+<!-- =================================================
      INICIO
-========================= -->
+================================================= -->
 
-<section class="pagina activa" id="inicio">
+<section
+class="pagina activa"
+id="inicio">
 
-    <div class="titulo">🏠 Inicio</div>
+    <div class="titulo">
+        🏠 Inicio
+    </div>
+
 
     <div class="estadisticas">
 
         <div class="stat">
-            <div class="numero" id="ventasHoyCantidad">0</div>
-            <div class="texto">Ventas de hoy</div>
+
+            <div
+            class="numero"
+            id="ventasHoyCantidad">
+                0
+            </div>
+
+            <div class="texto">
+                Ventas de hoy
+            </div>
+
         </div>
 
-        <div class="stat">
-            <div class="numero" id="ventasHoyDinero">$0</div>
-            <div class="texto">Ingresos de hoy</div>
-        </div>
 
         <div class="stat">
-            <div class="numero" id="inventarioTotal">0</div>
-            <div class="texto">Productos disponibles</div>
+
+            <div
+            class="numero"
+            id="ventasHoyDinero">
+                $0
+            </div>
+
+            <div class="texto">
+                Ingresos de hoy
+            </div>
+
         </div>
 
+
         <div class="stat">
-            <div class="numero" id="eventosPendientes">0</div>
-            <div class="texto">Eventos registrados</div>
+
+            <div
+            class="numero"
+            id="inventarioTotal">
+                0
+            </div>
+
+            <div class="texto">
+                Productos disponibles
+            </div>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div
+            class="numero"
+            id="eventosPendientes">
+                0
+            </div>
+
+            <div class="texto">
+                Eventos registrados
+            </div>
+
         </div>
 
     </div>
 
-    <div class="subtitulo">🥤 Registrar venta</div>
+
+    <div class="subtitulo">
+        🥤 Registrar venta
+    </div>
+
 
     <div class="ventas-grid">
 
+
         <div class="venta-card">
 
-            <div class="emoji">🥤</div>
+            <div class="emoji">
+                🥤
+            </div>
 
-            <h3>Chico</h3>
+            <h3>
+                Chico
+            </h3>
 
-            <div class="precio" id="precioInicioChico">
+            <div
+            class="precio"
+            id="precioInicioChico">
                 $65
             </div>
 
             <div>
                 Disponibles:
-                <strong id="stockInicioChico">0</strong>
+                <strong id="stockInicioChico">
+                    0
+                </strong>
             </div>
 
-            <button class="btn-vender" onclick="vender('chico')">
+            <button
+            class="btn-vender"
+            onclick="vender('chico')">
+
                 + Vender
+
             </button>
 
         </div>
 
+
         <div class="venta-card">
 
-            <div class="emoji">🥤</div>
+            <div class="emoji">
+                🥤
+            </div>
 
-            <h3>Grande</h3>
+            <h3>
+                Grande
+            </h3>
 
-            <div class="precio" id="precioInicioGrande">
+            <div
+            class="precio"
+            id="precioInicioGrande">
                 $85
             </div>
 
             <div>
                 Disponibles:
-                <strong id="stockInicioGrande">0</strong>
+                <strong id="stockInicioGrande">
+                    0
+                </strong>
             </div>
 
-            <button class="btn-vender" onclick="vender('grande')">
+            <button
+            class="btn-vender"
+            onclick="vender('grande')">
+
                 + Vender
+
             </button>
 
         </div>
 
+
     </div>
 
-    <div class="subtitulo">↩️ Última venta</div>
+
+    <!-- CORTE DEL DÍA -->
+
+    <div class="subtitulo">
+        🔴 Corte de venta de hoy
+    </div>
+
+
+    <div class="card">
+
+        <p>
+            Guarda el resumen de todas las ventas realizadas hoy.
+        </p>
+
+        <button
+        class="btn btn-rojo"
+        onclick="darCorteHoy()">
+
+            🔴 Dar corte de venta de hoy
+
+        </button>
+
+        <div
+        id="estadoCorteHoy"
+        style="margin-top:12px;font-weight:700;">
+        </div>
+
+    </div>
+
+
+    <div class="subtitulo">
+        ↩️ Última venta
+    </div>
+
 
     <div class="card">
 
@@ -577,67 +791,103 @@ header p {
             No hay ventas registradas.
         </div>
 
-        <button class="btn btn-gris" onclick="deshacerVenta()">
+        <button
+        class="btn btn-gris"
+        onclick="deshacerVenta()">
+
             ↩️ Deshacer última venta
+
         </button>
 
     </div>
 
+
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      INVENTARIO
-========================= -->
+================================================= -->
 
-<section class="pagina" id="inventario">
+<section
+class="pagina"
+id="inventario">
 
-    <div class="titulo">📦 Inventario</div>
+    <div class="titulo">
+        📦 Inventario
+    </div>
+
 
     <div class="inventario-grid">
 
+
         <div class="inventario-card">
 
-            <div class="emoji">🥤</div>
+            <div style="font-size:40px;">
+                🥤
+            </div>
 
-            <div class="nombre">Chico</div>
+            <div class="nombre">
+                Chico
+            </div>
 
-            <div class="cantidad" id="stockChico">
+            <div
+            class="cantidad"
+            id="stockChico">
                 0
             </div>
 
-            <div class="precio" id="precioInventarioChico">
+            <div
+            class="precio"
+            id="precioInventarioChico">
                 $65
             </div>
 
         </div>
 
+
         <div class="inventario-card">
 
-            <div class="emoji">🥤</div>
+            <div style="font-size:40px;">
+                🥤
+            </div>
 
-            <div class="nombre">Grande</div>
+            <div class="nombre">
+                Grande
+            </div>
 
-            <div class="cantidad" id="stockGrande">
+            <div
+            class="cantidad"
+            id="stockGrande">
                 0
             </div>
 
-            <div class="precio" id="precioInventarioGrande">
+            <div
+            class="precio"
+            id="precioInventarioGrande">
                 $85
             </div>
 
         </div>
 
+
     </div>
 
 
-    <div class="subtitulo">➕ Agregar inventario</div>
+    <div class="subtitulo">
+        ➕ Agregar inventario
+    </div>
+
 
     <div class="formulario">
 
+
         <div class="campo">
 
-            <label>Producto</label>
+            <label>
+                Producto
+            </label>
 
             <select id="productoAgregar">
 
@@ -653,271 +903,332 @@ header p {
 
         </div>
 
+
         <div class="campo">
 
-            <label>Cantidad</label>
+            <label>
+                Cantidad
+            </label>
 
             <input
-                type="number"
-                id="cantidadAgregar"
-                min="1"
-                placeholder="Ej. 20"
-            >
+            type="number"
+            id="cantidadAgregar"
+            min="1"
+            placeholder="Ej. 20">
 
         </div>
 
-        <button class="btn btn-verde" onclick="agregarInventario()">
+
+        <button
+        class="btn btn-verde"
+        onclick="agregarInventario()">
+
             ➕ Agregar al inventario
+
         </button>
+
 
     </div>
 
 
-    <div class="subtitulo">✏️ Corregir inventario</div>
+    <div class="subtitulo">
+        ✏️ Corregir inventario
+    </div>
+
 
     <div class="formulario">
 
-        <div class="campo">
-
-            <label>🥤 Cantidad Chico</label>
-
-            <input
-                type="number"
-                id="corregirChico"
-                min="0"
-            >
-
-        </div>
 
         <div class="campo">
 
-            <label>🥤 Cantidad Grande</label>
+            <label>
+                🥤 Cantidad Chico
+            </label>
 
             <input
-                type="number"
-                id="corregirGrande"
-                min="0"
-            >
+            type="number"
+            id="corregirChico"
+            min="0">
 
         </div>
 
-        <button class="btn btn-azul" onclick="corregirInventario()">
+
+        <div class="campo">
+
+            <label>
+                🥤 Cantidad Grande
+            </label>
+
+            <input
+            type="number"
+            id="corregirGrande"
+            min="0">
+
+        </div>
+
+
+        <button
+        class="btn btn-azul"
+        onclick="corregirInventario()">
+
             💾 Guardar cantidades
+
         </button>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      EVENTOS
-========================= -->
+================================================= -->
 
-<section class="pagina" id="eventos">
+<section
+class="pagina"
+id="eventos">
 
-    <div class="titulo">🎉 Eventos</div>
+    <div class="titulo">
+        🎉 Eventos
+    </div>
+
 
     <div class="formulario">
 
+
         <div class="campo">
 
-            <label>🎉 Nombre del cliente</label>
+            <label>
+                🎉 Nombre del cliente
+            </label>
 
             <input
-                type="text"
-                id="eventoCliente"
-                placeholder="Nombre del cliente"
-            >
+            type="text"
+            id="eventoCliente"
+            placeholder="Nombre del cliente">
 
         </div>
 
 
         <div class="form-row">
 
+
             <div class="campo">
 
-                <label>📅 Fecha</label>
+                <label>
+                    📅 Fecha
+                </label>
 
                 <input
-                    type="date"
-                    id="eventoFecha"
-                >
+                type="date"
+                id="eventoFecha">
 
             </div>
 
 
             <div class="campo">
 
-                <label>🕐 Horario</label>
+                <label>
+                    🕐 Horario
+                </label>
 
                 <input
-                    type="time"
-                    id="eventoHorario"
-                >
+                type="time"
+                id="eventoHorario">
 
             </div>
 
-        </div>
-
-
-        <div class="campo">
-
-            <label>📍 Ubicación</label>
-
-            <input
-                type="text"
-                id="eventoUbicacion"
-                placeholder="Lugar del evento"
-            >
 
         </div>
 
 
         <div class="campo">
 
-            <label>📦 Paquete seleccionado</label>
+            <label>
+                📍 Ubicación
+            </label>
 
             <input
-                type="text"
-                id="eventoPaquete"
-                placeholder="Ej. Paquete para 50 personas"
-            >
+            type="text"
+            id="eventoUbicacion"
+            placeholder="Lugar del evento">
 
         </div>
 
 
         <div class="campo">
 
-            <label>🥤 Sabores</label>
+            <label>
+                📦 Paquete seleccionado
+            </label>
 
             <input
-                type="text"
-                id="eventoSabores"
-                placeholder="Ej. Mango, Fresa, Guayaba"
-            >
+            type="text"
+            id="eventoPaquete"
+            placeholder="Ej. Paquete para 50 personas">
+
+        </div>
+
+
+        <div class="campo">
+
+            <label>
+                🥤 Sabores
+            </label>
+
+            <input
+            type="text"
+            id="eventoSabores"
+            placeholder="Ej. Mango, Fresa, Guayaba">
 
         </div>
 
 
         <div class="form-row">
 
+
             <div class="campo">
 
-                <label>💰 Costo del evento</label>
+                <label>
+                    💰 Costo del evento
+                </label>
 
                 <input
-                    type="number"
-                    id="eventoCosto"
-                    min="0"
-                    placeholder="$0"
-                    oninput="calcularRestante()"
-                >
+                type="number"
+                id="eventoCosto"
+                min="0"
+                placeholder="$0"
+                oninput="calcularRestante()">
 
             </div>
 
 
             <div class="campo">
 
-                <label>💵 Anticipo recibido</label>
+                <label>
+                    💵 Anticipo recibido
+                </label>
 
                 <input
-                    type="number"
-                    id="eventoAnticipo"
-                    min="0"
-                    placeholder="$0"
-                    oninput="calcularRestante()"
-                >
+                type="number"
+                id="eventoAnticipo"
+                min="0"
+                placeholder="$0"
+                oninput="calcularRestante()">
 
             </div>
 
-        </div>
-
-
-        <div class="campo">
-
-            <label>🔴 Restante</label>
-
-            <input
-                type="text"
-                id="eventoRestante"
-                value="$0"
-                readonly
-            >
 
         </div>
 
 
         <div class="campo">
 
-            <label>➕ Extras</label>
+            <label>
+                🔴 Restante
+            </label>
 
             <input
-                type="text"
-                id="eventoExtras"
-                placeholder="Ej. Vasos personalizados"
-            >
+            type="text"
+            id="eventoRestante"
+            value="$0"
+            readonly>
+
+        </div>
+
+
+        <div class="campo">
+
+            <label>
+                ➕ Extras
+            </label>
+
+            <input
+            type="text"
+            id="eventoExtras"
+            placeholder="Ej. Vasos personalizados">
 
         </div>
 
 
         <button
-            class="btn btn-verde"
-            id="btnGuardarEvento"
-            onclick="guardarEvento()"
-        >
+        class="btn btn-verde"
+        id="btnGuardarEvento"
+        onclick="guardarEvento()">
+
             💾 Guardar evento
+
         </button>
 
 
         <button
-            class="btn btn-gris"
-            id="btnCancelarEdicion"
-            onclick="cancelarEdicionEvento()"
-            style="display:none"
-        >
+        class="btn btn-gris"
+        id="btnCancelarEdicion"
+        onclick="cancelarEdicionEvento()"
+        style="display:none">
+
             ❌ Cancelar edición
+
         </button>
 
+
     </div>
 
 
-    <div class="titulo" style="margin-top:25px;">
+    <div
+    class="titulo"
+    style="margin-top:25px;">
+
         📋 Lista de eventos
+
     </div>
+
 
     <div id="listaEventos"></div>
 
+
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      RESUMEN
-========================= -->
+================================================= -->
 
-<section class="pagina" id="resumen">
+<section
+class="pagina"
+id="resumen">
 
-    <div class="titulo">📊 Resumen</div>
+    <div class="titulo">
+        📊 Resumen
+    </div>
+
 
     <div class="estadisticas">
 
+
         <div class="stat">
-            <div class="numero" id="resumenHoyCantidad">
+
+            <div
+            class="numero"
+            id="resumenHoyCantidad">
                 0
             </div>
 
             <div class="texto">
                 Ventas hoy
             </div>
+
         </div>
 
 
         <div class="stat">
 
             <div
-                class="numero"
-                id="resumenHoyDinero"
-            >
+            class="numero"
+            id="resumenHoyDinero">
                 $0
             </div>
 
@@ -931,9 +1242,8 @@ header p {
         <div class="stat">
 
             <div
-                class="numero"
-                id="resumenSemanaCantidad"
-            >
+            class="numero"
+            id="resumenSemanaCantidad">
                 0
             </div>
 
@@ -947,9 +1257,8 @@ header p {
         <div class="stat">
 
             <div
-                class="numero"
-                id="resumenSemanaDinero"
-            >
+            class="numero"
+            id="resumenSemanaDinero">
                 $0
             </div>
 
@@ -959,12 +1268,59 @@ header p {
 
         </div>
 
+
+    </div>
+
+
+    <!-- DINERO ACUMULADO -->
+
+    <div class="subtitulo">
+        💰 Dinero acumulado
+    </div>
+
+
+    <div class="acumulado-card">
+
+
+        <div class="etiqueta">
+            Dinero pendiente de pago
+        </div>
+
+
+        <div
+        class="cantidad"
+        id="dineroAcumulado">
+
+            $0
+
+        </div>
+
+
+        <div
+        id="periodoAcumulado"
+        style="font-size:13px;opacity:.8;margin-bottom:15px;">
+
+            Sin pagos registrados
+
+        </div>
+
+
+        <button
+        class="btn-pagado"
+        onclick="marcarPagado()">
+
+            ✅ PAGADO
+
+        </button>
+
+
     </div>
 
 
     <div class="subtitulo">
         📅 Ventas de hoy
     </div>
+
 
     <div class="card">
 
@@ -974,198 +1330,258 @@ header p {
 
     </div>
 
+
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      HISTORIAL
-========================= -->
+================================================= -->
 
-<section class="pagina" id="historial">
+<section
+class="pagina"
+id="historial">
 
-    <div class="titulo">📋 Historial</div>
+    <div class="titulo">
+        📋 Historial
+    </div>
+
+
+    <div class="subtitulo">
+        🔴 Cortes de venta
+    </div>
+
+
+    <div id="listaCortes"></div>
+
+
+    <div class="subtitulo">
+        💵 Pagos registrados
+    </div>
+
+
+    <div id="listaPagos"></div>
+
+
+    <div class="subtitulo">
+        🥤 Historial de ventas
+    </div>
+
 
     <div id="listaHistorial"></div>
 
+
 </section>
 
 
-<!-- =========================
+
+<!-- =================================================
      AJUSTES
-========================= -->
+================================================= -->
 
-<section class="pagina" id="ajustes">
+<section
+class="pagina"
+id="ajustes">
 
-    <div class="titulo">⚙️ Ajustes</div>
+    <div class="titulo">
+        ⚙️ Ajustes
+    </div>
 
 
     <div class="ajuste-bloque">
 
-        <h3>💰 Precios</h3>
+        <h3>
+            💰 Precios
+        </h3>
+
 
         <div class="campo">
 
-            <label>🥤 Precio Chico</label>
+            <label>
+                🥤 Precio Chico
+            </label>
 
             <input
-                type="number"
-                id="precioChico"
-                min="0"
-            >
+            type="number"
+            id="precioChico"
+            min="0">
 
         </div>
 
 
         <div class="campo">
 
-            <label>🥤 Precio Grande</label>
+            <label>
+                🥤 Precio Grande
+            </label>
 
             <input
-                type="number"
-                id="precioGrande"
-                min="0"
-            >
+            type="number"
+            id="precioGrande"
+            min="0">
 
         </div>
 
 
         <button
-            class="btn btn-verde"
-            onclick="guardarPrecios()"
-        >
+        class="btn btn-verde"
+        onclick="guardarPrecios()">
+
             💾 Guardar precios
+
         </button>
+
 
     </div>
 
 
     <div class="ajuste-bloque">
 
-        <h3>💾 Respaldo</h3>
+        <h3>
+            💾 Respaldo
+        </h3>
 
         <p>
-            Guarda una copia de todos tus datos,
-            incluyendo inventario, ventas y eventos.
+            Guarda una copia de inventario,
+            ventas, eventos, cortes y pagos.
         </p>
 
-        <button
-            class="btn btn-azul"
-            onclick="exportarDatos()"
-        >
-            📥 Exportar respaldo
-        </button>
 
         <button
-            class="btn btn-gris"
-            onclick="document.getElementById('archivoImportar').click()"
-        >
-            📤 Importar respaldo
+        class="btn btn-azul"
+        onclick="exportarDatos()">
+
+            📥 Exportar respaldo
+
         </button>
+
+
+        <button
+        class="btn btn-gris"
+        onclick="document.getElementById('archivoImportar').click()">
+
+            📤 Importar respaldo
+
+        </button>
+
 
         <input
-            type="file"
-            id="archivoImportar"
-            accept=".json"
-            style="display:none"
-            onchange="importarDatos(event)"
-        >
+        type="file"
+        id="archivoImportar"
+        accept=".json"
+        style="display:none"
+        onchange="importarDatos(event)">
 
     </div>
 
 
     <div class="ajuste-bloque">
 
-        <h3>⚠️ Datos</h3>
+        <h3>
+            ⚠️ Datos
+        </h3>
 
         <p>
             Esta opción eliminará inventario,
-            ventas y eventos guardados en este dispositivo.
+            ventas, eventos, cortes y pagos.
         </p>
 
+
         <button
-            class="btn btn-rojo"
-            onclick="borrarTodo()"
-        >
+        class="btn btn-rojo"
+        onclick="borrarTodo()">
+
             🗑️ Borrar todos los datos
+
         </button>
 
     </div>
 
+
 </section>
+
 
 </div>
 
 
-<!-- =========================
+
+<!-- =================================================
      NAVEGACION
-========================= -->
+================================================= -->
 
 <nav class="navegacion">
 
+
     <button
-        class="activo"
-        id="navInicio"
-        onclick="cambiarPagina('inicio', this)"
-    >
+    class="activo"
+    onclick="cambiarPagina('inicio',this)">
+
         <span>🏠</span>
         Inicio
+
     </button>
 
 
     <button
-        id="navInventario"
-        onclick="cambiarPagina('inventario', this)"
-    >
+    onclick="cambiarPagina('inventario',this)">
+
         <span>📦</span>
         Inventario
+
     </button>
 
 
     <button
-        id="navEventos"
-        onclick="cambiarPagina('eventos', this)"
-    >
+    onclick="cambiarPagina('eventos',this)">
+
         <span>🎉</span>
         Eventos
+
     </button>
 
 
     <button
-        id="navResumen"
-        onclick="cambiarPagina('resumen', this)"
-    >
+    onclick="cambiarPagina('resumen',this)">
+
         <span>📊</span>
         Resumen
+
     </button>
 
 
     <button
-        id="navHistorial"
-        onclick="cambiarPagina('historial', this)"
-    >
+    onclick="cambiarPagina('historial',this)">
+
         <span>📋</span>
         Historial
+
     </button>
 
 
     <button
-        id="navAjustes"
-        onclick="cambiarPagina('ajustes', this)"
-    >
+    onclick="cambiarPagina('ajustes',this)">
+
         <span>⚙️</span>
         Ajustes
+
     </button>
+
 
 </nav>
 
 
-<div class="toast" id="toast"></div>
+<div
+class="toast"
+id="toast">
+</div>
+
 
 
 <script>
 
 /* =====================================================
-   DATOS
+   DATOS PRINCIPALES
 ===================================================== */
 
 const CLAVE = "el_boingazo_app";
@@ -1173,21 +1589,27 @@ const CLAVE = "el_boingazo_app";
 
 const datosIniciales = {
 
-    inventario: {
-        chico: 20,
-        grande: 10
+    inventario:{
+        chico:20,
+        grande:10
     },
 
-    precios: {
-        chico: 65,
-        grande: 85
+    precios:{
+        chico:65,
+        grande:85
     },
 
-    ventas: [],
+    ventas:[],
 
-    entradasInventario: [],
+    entradasInventario:[],
 
-    eventos: []
+    eventos:[],
+
+    cortes:[],
+
+    pagos:[],
+
+    ultimoPago:null
 
 };
 
@@ -1201,53 +1623,112 @@ let eventoEditando = null;
    CARGAR DATOS
 ===================================================== */
 
-function cargarDatos() {
+function cargarDatos(){
 
-    try {
+    try{
 
-        const guardado = localStorage.getItem(CLAVE);
+        const guardado =
+            localStorage.getItem(CLAVE);
 
-        if (guardado) {
 
-            const datosGuardados = JSON.parse(guardado);
+        if(guardado){
 
-            if (!datosGuardados.inventario) {
-                datosGuardados.inventario = {
-                    chico: 0,
-                    grande: 0
+            const datosGuardados =
+                JSON.parse(guardado);
+
+
+            if(!datosGuardados.inventario){
+
+                datosGuardados.inventario={
+                    chico:0,
+                    grande:0
                 };
+
             }
 
-            if (!datosGuardados.precios) {
-                datosGuardados.precios = {
-                    chico: 65,
-                    grande: 85
+
+            if(!datosGuardados.precios){
+
+                datosGuardados.precios={
+                    chico:65,
+                    grande:85
                 };
+
             }
 
-            if (!Array.isArray(datosGuardados.ventas)) {
-                datosGuardados.ventas = [];
+
+            if(!Array.isArray(
+                datosGuardados.ventas
+            )){
+
+                datosGuardados.ventas=[];
+
             }
 
-            if (!Array.isArray(datosGuardados.entradasInventario)) {
-                datosGuardados.entradasInventario = [];
+
+            if(!Array.isArray(
+                datosGuardados.entradasInventario
+            )){
+
+                datosGuardados.entradasInventario=[];
+
             }
 
-            if (!Array.isArray(datosGuardados.eventos)) {
-                datosGuardados.eventos = [];
+
+            if(!Array.isArray(
+                datosGuardados.eventos
+            )){
+
+                datosGuardados.eventos=[];
+
             }
+
+
+            if(!Array.isArray(
+                datosGuardados.cortes
+            )){
+
+                datosGuardados.cortes=[];
+
+            }
+
+
+            if(!Array.isArray(
+                datosGuardados.pagos
+            )){
+
+                datosGuardados.pagos=[];
+
+            }
+
+
+            if(
+                datosGuardados.ultimoPago === undefined
+            ){
+
+                datosGuardados.ultimoPago=null;
+
+            }
+
 
             return datosGuardados;
+
         }
 
-    } catch (error) {
+    }catch(error){
 
-        console.log("Error cargando datos:", error);
+        console.log(
+            "Error cargando datos:",
+            error
+        );
 
     }
 
 
-    return JSON.parse(JSON.stringify(datosIniciales));
+    return JSON.parse(
+        JSON.stringify(datosIniciales)
+    );
+
 }
 
 
@@ -1255,7 +1736,7 @@ function cargarDatos() {
    GUARDAR
 ===================================================== */
 
-function guardarDatos() {
+function guardarDatos(){
 
     localStorage.setItem(
         CLAVE,
@@ -1269,39 +1750,69 @@ function guardarDatos() {
    UTILIDADES
 ===================================================== */
 
-function obtenerFecha() {
+function obtenerFecha(){
 
     return new Date()
-        .toISOString()
-        .split("T")[0];
+    .toISOString()
+    .split("T")[0];
 
 }
 
 
-function fechaBonita(fecha) {
+function fechaBonita(fecha){
 
-    if (!fecha) return "Sin fecha";
+    if(!fecha){
+        return "Sin fecha";
+    }
 
-    const partes = fecha.split("-");
 
-    if (partes.length !== 3) {
+    const partes =
+        fecha.split("-");
+
+
+    if(partes.length!==3){
         return fecha;
     }
+
 
     return `${partes[2]}/${partes[1]}/${partes[0]}`;
 
 }
 
 
-function dinero(numero) {
+function dinero(numero){
 
-    return Number(numero || 0).toLocaleString(
+    return Number(numero||0)
+    .toLocaleString(
         "es-MX",
         {
-            style: "currency",
-            currency: "MXN"
+            style:"currency",
+            currency:"MXN"
         }
     );
+
+}
+
+
+function obtenerFechaHora(){
+
+    const ahora =
+        new Date();
+
+
+    return {
+
+        fecha:obtenerFecha(),
+
+        hora:ahora.toLocaleTimeString(
+            "es-MX",
+            {
+                hour:"2-digit",
+                minute:"2-digit"
+            }
+        )
+
+    };
 
 }
 
@@ -1310,36 +1821,39 @@ function dinero(numero) {
    VENTAS
 ===================================================== */
 
-function vender(producto) {
+function vender(producto){
 
-    if (!datos.inventario[producto] ||
-        datos.inventario[producto] <= 0) {
+    if(
+        !datos.inventario[producto] ||
+        datos.inventario[producto]<=0
+    ){
 
-        mostrarToast("⚠️ No hay inventario disponible");
+        mostrarToast(
+            "⚠️ No hay inventario disponible"
+        );
 
         return;
+
     }
 
 
-    const venta = {
+    const fechaHora =
+        obtenerFechaHora();
 
-        id: Date.now(),
 
-        producto: producto,
+    const venta={
 
-        precio: Number(
+        id:Date.now(),
+
+        producto:producto,
+
+        precio:Number(
             datos.precios[producto]
         ),
 
-        fecha: obtenerFecha(),
+        fecha:fechaHora.fecha,
 
-        hora: new Date().toLocaleTimeString(
-            "es-MX",
-            {
-                hour: "2-digit",
-                minute: "2-digit"
-            }
-        )
+        hora:fechaHora.hora
 
     };
 
@@ -1359,25 +1873,36 @@ function vender(producto) {
 }
 
 
-function deshacerVenta() {
+/* =====================================================
+   DESHACER VENTA
+===================================================== */
 
-    if (!datos.ventas.length) {
+function deshacerVenta(){
+
+    if(!datos.ventas.length){
 
         mostrarToast(
             "No hay ventas para deshacer"
         );
 
         return;
+
     }
 
 
     const ultima =
-        datos.ventas[datos.ventas.length - 1];
+        datos.ventas[
+            datos.ventas.length-1
+        ];
 
 
-    datos.inventario[ultima.producto]++;
+    datos.inventario[
+        ultima.producto
+    ]++;
+
 
     datos.ventas.pop();
+
 
     guardarDatos();
 
@@ -1394,7 +1919,7 @@ function deshacerVenta() {
    INVENTARIO
 ===================================================== */
 
-function agregarInventario() {
+function agregarInventario(){
 
     const producto =
         document.getElementById(
@@ -1402,50 +1927,52 @@ function agregarInventario() {
         ).value;
 
 
-    const cantidad = Number(
-        document.getElementById(
-            "cantidadAgregar"
-        ).value
-    );
+    const cantidad =
+        Number(
+            document.getElementById(
+                "cantidadAgregar"
+            ).value
+        );
 
 
-    if (!cantidad || cantidad <= 0) {
+    if(!cantidad || cantidad<=0){
 
         mostrarToast(
             "⚠️ Introduce una cantidad válida"
         );
 
         return;
+
     }
 
 
-    datos.inventario[producto] += cantidad;
+    datos.inventario[
+        producto
+    ] += cantidad;
+
+
+    const fechaHora =
+        obtenerFechaHora();
 
 
     datos.entradasInventario.push({
 
-        id: Date.now(),
+        id:Date.now(),
 
-        producto: producto,
+        producto:producto,
 
-        cantidad: cantidad,
+        cantidad:cantidad,
 
-        fecha: obtenerFecha(),
+        fecha:fechaHora.fecha,
 
-        hora: new Date().toLocaleTimeString(
-            "es-MX",
-            {
-                hour: "2-digit",
-                minute: "2-digit"
-            }
-        )
+        hora:fechaHora.hora
 
     });
 
 
     document.getElementById(
         "cantidadAgregar"
-    ).value = "";
+    ).value="";
 
 
     guardarDatos();
@@ -1459,35 +1986,45 @@ function agregarInventario() {
 }
 
 
-function corregirInventario() {
+/* =====================================================
+   CORREGIR INVENTARIO
+===================================================== */
 
-    const chico = Number(
-        document.getElementById(
-            "corregirChico"
-        ).value
-    );
+function corregirInventario(){
 
-
-    const grande = Number(
-        document.getElementById(
-            "corregirGrande"
-        ).value
-    );
+    const chico =
+        Number(
+            document.getElementById(
+                "corregirChico"
+            ).value
+        );
 
 
-    if (chico < 0 || grande < 0) {
+    const grande =
+        Number(
+            document.getElementById(
+                "corregirGrande"
+            ).value
+        );
+
+
+    if(
+        chico<0 ||
+        grande<0
+    ){
 
         mostrarToast(
             "⚠️ Las cantidades no pueden ser negativas"
         );
 
         return;
+
     }
 
 
-    datos.inventario.chico = chico;
+    datos.inventario.chico=chico;
 
-    datos.inventario.grande = grande;
+    datos.inventario.grande=grande;
 
 
     guardarDatos();
@@ -1502,37 +2039,143 @@ function corregirInventario() {
 
 
 /* =====================================================
-   EVENTOS
+   CORTE DE VENTA
 ===================================================== */
 
-function calcularRestante() {
+function darCorteHoy(){
 
-    const costo = Number(
-        document.getElementById(
-            "eventoCosto"
-        ).value
-    ) || 0;
+    const hoy =
+        obtenerFecha();
 
 
-    const anticipo = Number(
-        document.getElementById(
-            "eventoAnticipo"
-        ).value
-    ) || 0;
+    const ventasHoy =
+        datos.ventas.filter(
+            venta =>
+                venta.fecha===hoy
+        );
 
 
-    const restante =
-        Math.max(costo - anticipo, 0);
+    if(!ventasHoy.length){
+
+        mostrarToast(
+            "⚠️ No hay ventas para hacer el corte de hoy"
+        );
+
+        return;
+
+    }
 
 
-    document.getElementById(
-        "eventoRestante"
-    ).value = dinero(restante);
+    const yaExiste =
+        datos.cortes.some(
+            corte =>
+                corte.fecha===hoy
+        );
+
+
+    if(yaExiste){
+
+        mostrarToast(
+            "⚠️ El corte de hoy ya está registrado"
+        );
+
+        return;
+
+    }
+
+
+    const chicos =
+        ventasHoy.filter(
+            venta =>
+                venta.producto==="chico"
+        ).length;
+
+
+    const grandes =
+        ventasHoy.filter(
+            venta =>
+                venta.producto==="grande"
+        ).length;
+
+
+    const total =
+        ventasHoy.reduce(
+            (suma,venta)=>
+                suma+Number(venta.precio),
+            0
+        );
+
+
+    const corte={
+
+        id:Date.now(),
+
+        fecha:hoy,
+
+        chicos:chicos,
+
+        grandes:grandes,
+
+        total:total,
+
+        cantidad:ventasHoy.length
+
+    };
+
+
+    datos.cortes.push(corte);
+
+
+    guardarDatos();
+
+    actualizarTodo();
+
+
+    mostrarToast(
+        "🔴 Corte de hoy guardado"
+    );
 
 }
 
 
-function guardarEvento() {
+/* =====================================================
+   EVENTOS
+===================================================== */
+
+function calcularRestante(){
+
+    const costo =
+        Number(
+            document.getElementById(
+                "eventoCosto"
+            ).value
+        )||0;
+
+
+    const anticipo =
+        Number(
+            document.getElementById(
+                "eventoAnticipo"
+            ).value
+        )||0;
+
+
+    const restante =
+        Math.max(
+            costo-anticipo,
+            0
+        );
+
+
+    document.getElementById(
+        "eventoRestante"
+    ).value=
+        dinero(restante);
+
+}
+
+
+function guardarEvento(){
 
     const cliente =
         document.getElementById(
@@ -1570,18 +2213,20 @@ function guardarEvento() {
         ).value.trim();
 
 
-    const costo = Number(
-        document.getElementById(
-            "eventoCosto"
-        ).value
-    ) || 0;
+    const costo =
+        Number(
+            document.getElementById(
+                "eventoCosto"
+            ).value
+        )||0;
 
 
-    const anticipo = Number(
-        document.getElementById(
-            "eventoAnticipo"
-        ).value
-    ) || 0;
+    const anticipo =
+        Number(
+            document.getElementById(
+                "eventoAnticipo"
+            ).value
+        )||0;
 
 
     const extras =
@@ -1590,94 +2235,106 @@ function guardarEvento() {
         ).value.trim();
 
 
-    if (!cliente) {
+    if(!cliente){
 
         mostrarToast(
             "⚠️ Escribe el nombre del cliente"
         );
 
         return;
+
     }
 
 
-    if (!fecha) {
+    if(!fecha){
 
         mostrarToast(
             "⚠️ Selecciona la fecha"
         );
 
         return;
+
     }
 
 
-    if (costo < 0 || anticipo < 0) {
+    if(costo<0 || anticipo<0){
 
         mostrarToast(
             "⚠️ Los montos no pueden ser negativos"
         );
 
         return;
+
     }
 
 
-    if (anticipo > costo) {
+    if(anticipo>costo){
 
         mostrarToast(
             "⚠️ El anticipo no puede ser mayor al costo"
         );
 
         return;
+
     }
 
 
-    const evento = {
+    const evento={
 
-        id: eventoEditando || Date.now(),
+        id:
+            eventoEditando ||
+            Date.now(),
 
-        cliente: cliente,
+        cliente:cliente,
 
-        fecha: fecha,
+        fecha:fecha,
 
-        horario: horario,
+        horario:horario,
 
-        ubicacion: ubicacion,
+        ubicacion:ubicacion,
 
-        paquete: paquete,
+        paquete:paquete,
 
-        sabores: sabores,
+        sabores:sabores,
 
-        costo: costo,
+        costo:costo,
 
-        anticipo: anticipo,
+        anticipo:anticipo,
 
-        restante: costo - anticipo,
+        restante:
+            costo-anticipo,
 
-        extras: extras
+        extras:extras
 
     };
 
 
-    if (eventoEditando) {
+    if(eventoEditando){
 
         const indice =
             datos.eventos.findIndex(
-                e => e.id === eventoEditando
+                e =>
+                    e.id===eventoEditando
             );
 
 
-        if (indice !== -1) {
+        if(indice!==-1){
 
-            datos.eventos[indice] = evento;
+            datos.eventos[indice]=evento;
 
         }
+
 
         mostrarToast(
             "✅ Evento actualizado"
         );
 
-    } else {
+    }else{
 
-        datos.eventos.push(evento);
+        datos.eventos.push(
+            evento
+        );
+
 
         mostrarToast(
             "🎉 Evento guardado"
@@ -1699,63 +2356,75 @@ function guardarEvento() {
    EDITAR EVENTO
 ===================================================== */
 
-function editarEvento(id) {
+function editarEvento(id){
 
     const evento =
         datos.eventos.find(
-            e => e.id === id
+            e =>
+                e.id===id
         );
 
 
-    if (!evento) return;
+    if(!evento){
+        return;
+    }
 
 
-    eventoEditando = id;
+    eventoEditando=id;
 
 
     document.getElementById(
         "eventoCliente"
-    ).value = evento.cliente || "";
+    ).value=
+        evento.cliente||"";
 
 
     document.getElementById(
         "eventoFecha"
-    ).value = evento.fecha || "";
+    ).value=
+        evento.fecha||"";
 
 
     document.getElementById(
         "eventoHorario"
-    ).value = evento.horario || "";
+    ).value=
+        evento.horario||"";
 
 
     document.getElementById(
         "eventoUbicacion"
-    ).value = evento.ubicacion || "";
+    ).value=
+        evento.ubicacion||"";
 
 
     document.getElementById(
         "eventoPaquete"
-    ).value = evento.paquete || "";
+    ).value=
+        evento.paquete||"";
 
 
     document.getElementById(
         "eventoSabores"
-    ).value = evento.sabores || "";
+    ).value=
+        evento.sabores||"";
 
 
     document.getElementById(
         "eventoCosto"
-    ).value = evento.costo || 0;
+    ).value=
+        evento.costo||0;
 
 
     document.getElementById(
         "eventoAnticipo"
-    ).value = evento.anticipo || 0;
+    ).value=
+        evento.anticipo||0;
 
 
     document.getElementById(
         "eventoExtras"
-    ).value = evento.extras || "";
+    ).value=
+        evento.extras||"";
 
 
     calcularRestante();
@@ -1763,30 +2432,28 @@ function editarEvento(id) {
 
     document.getElementById(
         "btnGuardarEvento"
-    ).textContent =
+    ).textContent=
         "💾 Guardar cambios";
 
 
     document.getElementById(
         "btnCancelarEdicion"
-    ).style.display = "block";
+    ).style.display=
+        "block";
 
 
     cambiarPagina(
         "eventos",
-        document.getElementById("navEventos")
+        document.querySelectorAll(
+            ".navegacion button"
+        )[2]
     );
 
 
     window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+        top:0,
+        behavior:"smooth"
     });
-
-
-    mostrarToast(
-        "✏️ Editando evento"
-    );
 
 }
 
@@ -1795,33 +2462,35 @@ function editarEvento(id) {
    ELIMINAR EVENTO
 ===================================================== */
 
-function eliminarEvento(id) {
+function eliminarEvento(id){
 
     const evento =
         datos.eventos.find(
-            e => e.id === id
+            e =>
+                e.id===id
         );
 
 
-    if (!evento) return;
+    if(!evento){
+        return;
+    }
 
 
-    const confirmar =
-        confirm(
-            `¿Eliminar el evento de ${evento.cliente}?`
-        );
-
-
-    if (!confirmar) return;
+    if(!confirm(
+        `¿Eliminar el evento de ${evento.cliente}?`
+    )){
+        return;
+    }
 
 
     datos.eventos =
         datos.eventos.filter(
-            e => e.id !== id
+            e =>
+                e.id!==id
         );
 
 
-    if (eventoEditando === id) {
+    if(eventoEditando===id){
 
         limpiarFormularioEvento();
 
@@ -1843,75 +2512,76 @@ function eliminarEvento(id) {
    LIMPIAR EVENTO
 ===================================================== */
 
-function limpiarFormularioEvento() {
+function limpiarFormularioEvento(){
 
-    eventoEditando = null;
+    eventoEditando=null;
 
 
     document.getElementById(
         "eventoCliente"
-    ).value = "";
+    ).value="";
 
 
     document.getElementById(
         "eventoFecha"
-    ).value = "";
+    ).value="";
 
 
     document.getElementById(
         "eventoHorario"
-    ).value = "";
+    ).value="";
 
 
     document.getElementById(
         "eventoUbicacion"
-    ).value = "";
+    ).value="";
 
 
     document.getElementById(
         "eventoPaquete"
-    ).value = "";
+    ).value="";
 
 
     document.getElementById(
         "eventoSabores"
-    ).value = "";
+    ).value="";
 
 
     document.getElementById(
         "eventoCosto"
-    ).value = "";
+    ).value="";
 
 
     document.getElementById(
         "eventoAnticipo"
-    ).value = "";
-
-
-    document.getElementById(
-        "eventoExtras"
-    ).value = "";
+    ).value="";
 
 
     document.getElementById(
         "eventoRestante"
-    ).value = "$0";
+    ).value="$0";
+
+
+    document.getElementById(
+        "eventoExtras"
+    ).value="";
 
 
     document.getElementById(
         "btnGuardarEvento"
-    ).textContent =
+    ).textContent=
         "💾 Guardar evento";
 
 
     document.getElementById(
         "btnCancelarEdicion"
-    ).style.display = "none";
+    ).style.display=
+        "none";
 
 }
 
 
-function cancelarEdicionEvento() {
+function cancelarEdicionEvento(){
 
     limpiarFormularioEvento();
 
@@ -1926,7 +2596,7 @@ function cancelarEdicionEvento() {
    MOSTRAR EVENTOS
 ===================================================== */
 
-function actualizarEventos() {
+function actualizarEventos(){
 
     const contenedor =
         document.getElementById(
@@ -1934,42 +2604,51 @@ function actualizarEventos() {
         );
 
 
-    if (!datos.eventos.length) {
+    if(!datos.eventos.length){
 
-        contenedor.innerHTML = `
+        contenedor.innerHTML=`
+
             <div class="vacio">
+
                 🎉 No tienes eventos registrados.
+
             </div>
+
         `;
 
         return;
+
     }
 
 
     const eventosOrdenados =
         datos.eventos
         .slice()
-        .sort((a, b) => {
+        .sort(
+            (a,b)=>{
 
-            const fechaA =
-                new Date(
-                    `${a.fecha}T${a.horario || "00:00"}`
-                );
+                const fechaA =
+                    new Date(
+                        `${a.fecha}T${a.horario||"00:00"}`
+                    );
 
-            const fechaB =
-                new Date(
-                    `${b.fecha}T${b.horario || "00:00"}`
-                );
 
-            return fechaA - fechaB;
+                const fechaB =
+                    new Date(
+                        `${b.fecha}T${b.horario||"00:00"}`
+                    );
 
-        });
+
+                return fechaA-fechaB;
+
+            }
+        );
 
 
     contenedor.innerHTML =
-        eventosOrdenados.map(evento => {
-
-            return `
+        eventosOrdenados
+        .map(
+            evento=>`
 
                 <div class="evento-card">
 
@@ -2025,35 +2704,257 @@ function actualizarEventos() {
                     <div class="evento-botones">
 
                         <button
-                            class="btn-editar"
-                            onclick="editarEvento(${evento.id})"
-                        >
+                        class="btn-editar"
+                        onclick="editarEvento(${evento.id})">
+
                             ✏️ Editar
+
                         </button>
 
                         <button
-                            class="btn-eliminar"
-                            onclick="eliminarEvento(${evento.id})"
-                        >
+                        class="btn-eliminar"
+                        onclick="eliminarEvento(${evento.id})">
+
                             🗑️ Eliminar
+
                         </button>
 
                     </div>
 
                 </div>
 
-            `;
-
-        }).join("");
+            `
+        )
+        .join("");
 
 }
 
 
 /* =====================================================
-   INICIO
+   ACUMULADO DE DINERO
 ===================================================== */
 
-function actualizarInicio() {
+function obtenerVentasPendientes(){
+
+    let fechaInicio =
+        datos.ultimoPago;
+
+
+    if(!fechaInicio){
+
+        if(!datos.ventas.length){
+
+            return [];
+
+        }
+
+
+        const fechas =
+            datos.ventas
+            .map(v=>v.fecha)
+            .sort();
+
+
+        fechaInicio =
+            fechas[0];
+
+    }
+
+
+    return datos.ventas.filter(
+        venta =>
+            venta.fecha>=fechaInicio
+    );
+
+}
+
+
+/*
+   IMPORTANTE:
+   Si existe un último pago con fecha X,
+   las ventas del mismo día X se consideran
+   posteriores al pago solamente si fueron
+   hechas después del pago.
+
+   Para hacerlo sencillo y preciso usamos
+   también la hora del pago.
+*/
+
+function obtenerVentasPendientesPrecisas(){
+
+    if(!datos.ventas.length){
+
+        return [];
+
+    }
+
+
+    if(!datos.pagos.length){
+
+        return datos.ventas.slice();
+
+    }
+
+
+    const ultimoPago =
+        datos.pagos[
+            datos.pagos.length-1
+        ];
+
+
+    return datos.ventas.filter(
+        venta=>{
+
+            if(
+                venta.fecha >
+                ultimoPago.fechaFin
+            ){
+
+                return true;
+
+            }
+
+
+            if(
+                venta.fecha <
+                ultimoPago.fechaFin
+            ){
+
+                return false;
+
+            }
+
+
+            if(
+                !ultimoPago.horaFin
+            ){
+
+                return false;
+
+            }
+
+
+            return (
+                venta.hora &&
+                venta.hora >
+                ultimoPago.horaFin
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   MARCAR PAGADO
+===================================================== */
+
+function marcarPagado(){
+
+    const ventasPendientes =
+        obtenerVentasPendientesPrecisas();
+
+
+    const total =
+        ventasPendientes.reduce(
+            (suma,venta)=>
+                suma+Number(venta.precio),
+            0
+        );
+
+
+    if(total<=0){
+
+        mostrarToast(
+            "💰 No hay dinero pendiente de pago"
+        );
+
+        return;
+
+    }
+
+
+    const hoy =
+        obtenerFecha();
+
+
+    const hora =
+        new Date()
+        .toLocaleTimeString(
+            "es-MX",
+            {
+                hour:"2-digit",
+                minute:"2-digit"
+            }
+        );
+
+
+    let fechaInicio;
+
+
+    if(datos.pagos.length){
+
+        const ultimoPago =
+            datos.pagos[
+                datos.pagos.length-1
+            ];
+
+
+        fechaInicio =
+            ultimoPago.fechaFin;
+
+    }else{
+
+        fechaInicio =
+            ventasPendientes
+            .map(v=>v.fecha)
+            .sort()[0];
+
+    }
+
+
+    const pago={
+
+        id:Date.now(),
+
+        fechaInicio:fechaInicio,
+
+        fechaFin:hoy,
+
+        horaFin:hora,
+
+        total:total,
+
+        cantidadVentas:
+            ventasPendientes.length
+
+    };
+
+
+    datos.pagos.push(pago);
+
+
+    datos.ultimoPago=hoy;
+
+
+    guardarDatos();
+
+    actualizarTodo();
+
+
+    mostrarToast(
+        `✅ Pago registrado: ${dinero(total)}`
+    );
+
+}
+
+
+/* =====================================================
+   ACTUALIZAR INICIO
+===================================================== */
+
+function actualizarInicio(){
 
     const hoy =
         obtenerFecha();
@@ -2061,7 +2962,8 @@ function actualizarInicio() {
 
     const ventasHoy =
         datos.ventas.filter(
-            venta => venta.fecha === hoy
+            venta =>
+                venta.fecha===hoy
         );
 
 
@@ -2071,146 +2973,198 @@ function actualizarInicio() {
 
     const dineroHoy =
         ventasHoy.reduce(
-            (total, venta) =>
-                total + Number(venta.precio),
+            (total,venta)=>
+                total+Number(venta.precio),
             0
         );
 
 
     document.getElementById(
         "ventasHoyCantidad"
-    ).textContent = cantidad;
+    ).textContent=
+        cantidad;
 
 
     document.getElementById(
         "ventasHoyDinero"
-    ).textContent = dinero(dineroHoy);
+    ).textContent=
+        dinero(dineroHoy);
 
 
     document.getElementById(
         "inventarioTotal"
-    ).textContent =
-        Number(datos.inventario.chico) +
-        Number(datos.inventario.grande);
+    ).textContent=
+        Number(
+            datos.inventario.chico
+        )+
+        Number(
+            datos.inventario.grande
+        );
 
 
     document.getElementById(
         "eventosPendientes"
-    ).textContent =
+    ).textContent=
         datos.eventos.length;
 
 
     document.getElementById(
         "precioInicioChico"
-    ).textContent =
-        dinero(datos.precios.chico);
+    ).textContent=
+        dinero(
+            datos.precios.chico
+        );
 
 
     document.getElementById(
         "precioInicioGrande"
-    ).textContent =
-        dinero(datos.precios.grande);
+    ).textContent=
+        dinero(
+            datos.precios.grande
+        );
 
 
     document.getElementById(
         "stockInicioChico"
-    ).textContent =
+    ).textContent=
         datos.inventario.chico;
 
 
     document.getElementById(
         "stockInicioGrande"
-    ).textContent =
+    ).textContent=
         datos.inventario.grande;
 
 
     const ultimaVenta =
         datos.ventas[
-            datos.ventas.length - 1
+            datos.ventas.length-1
         ];
 
 
-    if (!ultimaVenta) {
+    if(!ultimaVenta){
 
         document.getElementById(
             "ultimaVenta"
-        ).textContent =
+        ).textContent=
             "No hay ventas registradas.";
 
-        return;
+    }else{
+
+        document.getElementById(
+            "ultimaVenta"
+        ).innerHTML=`
+
+            <strong>
+                🥤 ${
+                    ultimaVenta.producto==="chico"
+                    ? "Chico"
+                    : "Grande"
+                }
+            </strong>
+
+            ${dinero(
+                ultimaVenta.precio
+            )}
+
+            · ${fechaBonita(
+                ultimaVenta.fecha
+            )}
+
+            · ${ultimaVenta.hora}
+
+        `;
+
     }
 
 
-    document.getElementById(
-        "ultimaVenta"
-    ).innerHTML = `
+    const corteHoy =
+        datos.cortes.find(
+            corte =>
+                corte.fecha===hoy
+        );
 
-        <strong>
-            🥤 ${ultimaVenta.producto === "chico"
-                ? "Chico"
-                : "Grande"}
-        </strong>
 
-        ${dinero(ultimaVenta.precio)}
+    const estado =
+        document.getElementById(
+            "estadoCorteHoy"
+        );
 
-        · ${fechaBonita(ultimaVenta.fecha)}
 
-        · ${ultimaVenta.hora}
+    if(corteHoy){
 
-    `;
+        estado.innerHTML=`
+
+            ✅ Corte registrado hoy:
+            <strong>
+                ${dinero(corteHoy.total)}
+            </strong>
+
+        `;
+
+    }else{
+
+        estado.innerHTML=
+            "⚠️ El corte de hoy todavía no se ha realizado.";
+
+    }
 
 }
 
 
 /* =====================================================
-   INVENTARIO
+   ACTUALIZAR INVENTARIO
 ===================================================== */
 
-function actualizarInventario() {
+function actualizarInventario(){
 
     document.getElementById(
         "stockChico"
-    ).textContent =
+    ).textContent=
         datos.inventario.chico;
 
 
     document.getElementById(
         "stockGrande"
-    ).textContent =
+    ).textContent=
         datos.inventario.grande;
 
 
     document.getElementById(
         "precioInventarioChico"
-    ).textContent =
-        dinero(datos.precios.chico);
+    ).textContent=
+        dinero(
+            datos.precios.chico
+        );
 
 
     document.getElementById(
         "precioInventarioGrande"
-    ).textContent =
-        dinero(datos.precios.grande);
+    ).textContent=
+        dinero(
+            datos.precios.grande
+        );
 
 
     document.getElementById(
         "corregirChico"
-    ).value =
+    ).value=
         datos.inventario.chico;
 
 
     document.getElementById(
         "corregirGrande"
-    ).value =
+    ).value=
         datos.inventario.grande;
 
 }
 
 
 /* =====================================================
-   RESUMEN
+   ACTUALIZAR RESUMEN
 ===================================================== */
 
-function actualizarResumen() {
+function actualizarResumen(){
 
     const hoy =
         obtenerFecha();
@@ -2218,7 +3172,8 @@ function actualizarResumen() {
 
     const ventasHoy =
         datos.ventas.filter(
-            venta => venta.fecha === hoy
+            venta =>
+                venta.fecha===hoy
         );
 
 
@@ -2228,21 +3183,21 @@ function actualizarResumen() {
 
     const dineroHoy =
         ventasHoy.reduce(
-            (total, venta) =>
-                total + Number(venta.precio),
+            (total,venta)=>
+                total+Number(venta.precio),
             0
         );
 
 
     document.getElementById(
         "resumenHoyCantidad"
-    ).textContent =
+    ).textContent=
         cantidadHoy;
 
 
     document.getElementById(
         "resumenHoyDinero"
-    ).textContent =
+    ).textContent=
         dinero(dineroHoy);
 
 
@@ -2255,110 +3210,369 @@ function actualizarResumen() {
 
 
     const diferencia =
-        dia === 0 ? 6 : dia - 1;
+        dia===0
+        ? 6
+        : dia-1;
 
 
     const inicioSemana =
-        new Date(fechaActual);
+        new Date(
+            fechaActual
+        );
 
 
     inicioSemana.setDate(
-        fechaActual.getDate() - diferencia
+        fechaActual.getDate()-
+        diferencia
     );
 
 
     inicioSemana.setHours(
-        0, 0, 0, 0
+        0,0,0,0
     );
 
 
     const ventasSemana =
         datos.ventas.filter(
-            venta => {
+            venta=>{
 
                 const fechaVenta =
                     new Date(
-                        venta.fecha + "T00:00:00"
+                        venta.fecha+
+                        "T00:00:00"
                     );
 
-                return fechaVenta >= inicioSemana;
+
+                return (
+                    fechaVenta>=
+                    inicioSemana
+                );
 
             }
         );
 
 
-    const cantidadSemana =
+    document.getElementById(
+        "resumenSemanaCantidad"
+    ).textContent=
         ventasSemana.length;
 
 
-    const dineroSemana =
-        ventasSemana.reduce(
-            (total, venta) =>
-                total + Number(venta.precio),
+    document.getElementById(
+        "resumenSemanaDinero"
+    ).textContent=
+        dinero(
+            ventasSemana.reduce(
+                (total,venta)=>
+                    total+
+                    Number(
+                        venta.precio
+                    ),
+                0
+            )
+        );
+
+
+    /* ACUMULADO */
+
+    const pendientes =
+        obtenerVentasPendientesPrecisas();
+
+
+    const acumulado =
+        pendientes.reduce(
+            (total,venta)=>
+                total+
+                Number(
+                    venta.precio
+                ),
             0
         );
 
 
     document.getElementById(
-        "resumenSemanaCantidad"
-    ).textContent =
-        cantidadSemana;
+        "dineroAcumulado"
+    ).textContent=
+        dinero(acumulado);
 
 
-    document.getElementById(
-        "resumenSemanaDinero"
-    ).textContent =
-        dinero(dineroSemana);
-
-
-    if (!ventasHoy.length) {
-
+    const periodo =
         document.getElementById(
-            "detalleVentasHoy"
-        ).innerHTML =
-            "No hay ventas hoy.";
+            "periodoAcumulado"
+        );
 
-        return;
+
+    if(!pendientes.length){
+
+        periodo.textContent=
+            "No hay dinero pendiente de pago.";
+
+    }else{
+
+        const fechas =
+            pendientes
+            .map(v=>v.fecha)
+            .sort();
+
+
+        periodo.textContent=
+            `Acumulando desde ${fechaBonita(
+                fechas[0]
+            )}`;
+
     }
 
 
-    document.getElementById(
-        "detalleVentasHoy"
-    ).innerHTML =
-        ventasHoy.map(
-            venta => `
+    /* VENTAS HOY */
 
-                <div class="lista-item">
+    if(!ventasHoy.length){
 
-                    <strong>
-                        🥤 ${
-                            venta.producto === "chico"
-                            ? "Boing Chico"
-                            : "Boing Grande"
-                        }
-                    </strong>
+        document.getElementById(
+            "detalleVentasHoy"
+        ).innerHTML=
+            "No hay ventas hoy.";
 
-                    ${dinero(venta.precio)}
+    }else{
 
-                    <br>
+        document.getElementById(
+            "detalleVentasHoy"
+        ).innerHTML=
+            ventasHoy
+            .map(
+                venta=>`
 
-                    <small>
-                        ${venta.hora}
-                    </small>
+                    <div class="lista-item">
 
-                </div>
+                        <strong>
+                            🥤 ${
+                                venta.producto==="chico"
+                                ? "Boing Chico"
+                                : "Boing Grande"
+                            }
+                        </strong>
 
-            `
-        ).join("");
+                        ${dinero(
+                            venta.precio
+                        )}
+
+                        <br>
+
+                        <small>
+                            ${venta.hora}
+                        </small>
+
+                    </div>
+
+                `
+            )
+            .join("");
+
+    }
 
 }
 
 
 /* =====================================================
-   HISTORIAL
+   ACTUALIZAR HISTORIAL
 ===================================================== */
 
-function actualizarHistorial() {
+function actualizarHistorial(){
+
+    actualizarCortes();
+
+    actualizarPagos();
+
+    actualizarVentasHistorial();
+
+}
+
+
+/* =====================================================
+   CORTES
+===================================================== */
+
+function actualizarCortes(){
+
+    const contenedor =
+        document.getElementById(
+            "listaCortes"
+        );
+
+
+    if(!datos.cortes.length){
+
+        contenedor.innerHTML=`
+
+            <div class="vacio">
+
+                🔴 No hay cortes registrados.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const cortes =
+        datos.cortes
+        .slice()
+        .sort(
+            (a,b)=>
+                b.fecha.localeCompare(
+                    a.fecha
+                )
+        );
+
+
+    contenedor.innerHTML =
+        cortes
+        .map(
+            corte=>`
+
+                <div class="corte-card">
+
+                    <div class="corte-titulo">
+
+                        🔴 Corte
+                        ${fechaBonita(
+                            corte.fecha
+                        )}
+
+                    </div>
+
+                    <div>
+                        🥤 Chicos:
+                        <strong>
+                            ${corte.chicos}
+                        </strong>
+                    </div>
+
+                    <div>
+                        🥤 Grandes:
+                        <strong>
+                            ${corte.grandes}
+                        </strong>
+                    </div>
+
+                    <div>
+                        📦 Total de Boings:
+                        <strong>
+                            ${corte.cantidad}
+                        </strong>
+                    </div>
+
+                    <div class="corte-total">
+                        💰 ${dinero(
+                            corte.total
+                        )}
+                    </div>
+
+                </div>
+
+            `
+        )
+        .join("");
+
+}
+
+
+/* =====================================================
+   PAGOS
+===================================================== */
+
+function actualizarPagos(){
+
+    const contenedor =
+        document.getElementById(
+            "listaPagos"
+        );
+
+
+    if(!datos.pagos.length){
+
+        contenedor.innerHTML=`
+
+            <div class="vacio">
+
+                💵 Todavía no hay pagos registrados.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const pagos =
+        datos.pagos
+        .slice()
+        .reverse();
+
+
+    contenedor.innerHTML =
+        pagos
+        .map(
+            pago=>`
+
+                <div class="pago-card">
+
+                    <strong>
+                        💵 Pago registrado
+                    </strong>
+
+                    <div style="margin-top:7px;">
+
+                        📅 Del
+                        <strong>
+                            ${fechaBonita(
+                                pago.fechaInicio
+                            )}
+                        </strong>
+
+                        al
+
+                        <strong>
+                            ${fechaBonita(
+                                pago.fechaFin
+                            )}
+                        </strong>
+
+                    </div>
+
+                    <div>
+                        🕐 ${pago.horaFin || ""}
+                    </div>
+
+                    <div>
+                        🥤 Ventas:
+                        ${pago.cantidadVentas}
+                    </div>
+
+                    <div class="pago-total">
+                        💰 ${dinero(
+                            pago.total
+                        )}
+                    </div>
+
+                </div>
+
+            `
+        )
+        .join("");
+
+}
+
+
+/* =====================================================
+   HISTORIAL DE VENTAS
+===================================================== */
+
+function actualizarVentasHistorial(){
 
     const contenedor =
         document.getElementById(
@@ -2366,15 +3580,20 @@ function actualizarHistorial() {
         );
 
 
-    if (!datos.ventas.length) {
+    if(!datos.ventas.length){
 
-        contenedor.innerHTML = `
+        contenedor.innerHTML=`
+
             <div class="vacio">
+
                 📋 No hay ventas registradas.
+
             </div>
+
         `;
 
         return;
+
     }
 
 
@@ -2385,56 +3604,62 @@ function actualizarHistorial() {
 
 
     contenedor.innerHTML =
-        ventas.map(
-            venta => `
+        ventas
+        .map(
+            venta=>`
 
                 <div class="lista-item">
 
                     <strong>
                         🥤 ${
-                            venta.producto === "chico"
+                            venta.producto==="chico"
                             ? "Boing Chico"
                             : "Boing Grande"
                         }
                     </strong>
 
-                    💰 ${dinero(venta.precio)}
+                    💰 ${dinero(
+                        venta.precio
+                    )}
 
                     <br>
 
-                    📅 ${fechaBonita(venta.fecha)}
+                    📅 ${fechaBonita(
+                        venta.fecha
+                    )}
 
                     · 🕐 ${venta.hora}
 
                 </div>
 
             `
-        ).join("");
+        )
+        .join("");
 
 }
 
 
 /* =====================================================
-   PRECIOS
+   AJUSTES / PRECIOS
 ===================================================== */
 
-function actualizarAjustes() {
+function actualizarAjustes(){
 
     document.getElementById(
         "precioChico"
-    ).value =
+    ).value=
         datos.precios.chico;
 
 
     document.getElementById(
         "precioGrande"
-    ).value =
+    ).value=
         datos.precios.grande;
 
 }
 
 
-function guardarPrecios() {
+function guardarPrecios(){
 
     const chico =
         Number(
@@ -2452,24 +3677,25 @@ function guardarPrecios() {
         );
 
 
-    if (
-        chico < 0 ||
-        grande < 0 ||
+    if(
+        chico<0 ||
+        grande<0 ||
         isNaN(chico) ||
         isNaN(grande)
-    ) {
+    ){
 
         mostrarToast(
             "⚠️ Introduce precios válidos"
         );
 
         return;
+
     }
 
 
-    datos.precios.chico = chico;
+    datos.precios.chico=chico;
 
-    datos.precios.grande = grande;
+    datos.precios.grande=grande;
 
 
     guardarDatos();
@@ -2484,10 +3710,10 @@ function guardarPrecios() {
 
 
 /* =====================================================
-   RESPALDO
+   EXPORTAR
 ===================================================== */
 
-function exportarDatos() {
+function exportarDatos(){
 
     const contenido =
         JSON.stringify(
@@ -2501,30 +3727,35 @@ function exportarDatos() {
         new Blob(
             [contenido],
             {
-                type: "application/json"
+                type:"application/json"
             }
         );
 
 
     const url =
-        URL.createObjectURL(archivo);
+        URL.createObjectURL(
+            archivo
+        );
 
 
     const enlace =
-        document.createElement("a");
+        document.createElement(
+            "a"
+        );
 
 
-    enlace.href = url;
+    enlace.href=url;
 
-
-    enlace.download =
+    enlace.download=
         "el-boingazo-respaldo.json";
 
 
     enlace.click();
 
 
-    URL.revokeObjectURL(url);
+    URL.revokeObjectURL(
+        url
+    );
 
 
     mostrarToast(
@@ -2534,102 +3765,133 @@ function exportarDatos() {
 }
 
 
-function importarDatos(event) {
+/* =====================================================
+   IMPORTAR
+===================================================== */
+
+function importarDatos(event){
 
     const archivo =
         event.target.files[0];
 
 
-    if (!archivo) return;
+    if(!archivo){
+        return;
+    }
 
 
     const lector =
         new FileReader();
 
 
-    lector.onload = function(e) {
+    lector.onload =
+        function(e){
 
-        try {
+            try{
 
-            const datosImportados =
-                JSON.parse(
-                    e.target.result
+                const importado =
+                    JSON.parse(
+                        e.target.result
+                    );
+
+
+                if(
+                    !importado.inventario ||
+                    !importado.precios
+                ){
+
+                    throw new Error(
+                        "Archivo inválido"
+                    );
+
+                }
+
+
+                if(!Array.isArray(
+                    importado.ventas
+                )){
+
+                    importado.ventas=[];
+
+                }
+
+
+                if(!Array.isArray(
+                    importado.entradasInventario
+                )){
+
+                    importado.entradasInventario=[];
+
+                }
+
+
+                if(!Array.isArray(
+                    importado.eventos
+                )){
+
+                    importado.eventos=[];
+
+                }
+
+
+                if(!Array.isArray(
+                    importado.cortes
+                )){
+
+                    importado.cortes=[];
+
+                }
+
+
+                if(!Array.isArray(
+                    importado.pagos
+                )){
+
+                    importado.pagos=[];
+
+                }
+
+
+                if(
+                    importado.ultimoPago ===
+                    undefined
+                ){
+
+                    importado.ultimoPago=null;
+
+                }
+
+
+                datos=importado;
+
+
+                guardarDatos();
+
+                actualizarTodo();
+
+
+                mostrarToast(
+                    "✅ Respaldo importado"
                 );
 
 
-            if (!datosImportados.inventario) {
+            }catch(error){
 
-                throw new Error(
-                    "Archivo inválido"
+                mostrarToast(
+                    "❌ El archivo no es válido"
                 );
 
             }
 
-
-            if (!datosImportados.precios) {
-
-                throw new Error(
-                    "Archivo inválido"
-                );
-
-            }
+        };
 
 
-            if (!Array.isArray(
-                datosImportados.ventas
-            )) {
-
-                datosImportados.ventas = [];
-
-            }
+    lector.readAsText(
+        archivo
+    );
 
 
-            if (!Array.isArray(
-                datosImportados.entradasInventario
-            )) {
-
-                datosImportados.entradasInventario = [];
-
-            }
-
-
-            if (!Array.isArray(
-                datosImportados.eventos
-            )) {
-
-                datosImportados.eventos = [];
-
-            }
-
-
-            datos = datosImportados;
-
-
-            guardarDatos();
-
-            actualizarTodo();
-
-
-            mostrarToast(
-                "✅ Respaldo importado"
-            );
-
-
-        } catch (error) {
-
-            mostrarToast(
-                "❌ El archivo no es válido"
-            );
-
-        }
-
-    };
-
-
-    lector.readAsText(archivo);
-
-
-    event.target.value = "";
+    event.target.value="";
 
 }
 
@@ -2638,29 +3900,31 @@ function importarDatos(event) {
    BORRAR TODO
 ===================================================== */
 
-function borrarTodo() {
+function borrarTodo(){
 
-    const confirmar =
-        confirm(
-            "⚠️ ¿Seguro que quieres borrar TODOS los datos de El Boingazo?"
-        );
+    if(!confirm(
+        "⚠️ ¿Seguro que quieres borrar TODOS los datos de El Boingazo?"
+    )){
 
+        return;
 
-    if (!confirmar) return;
-
-
-    const segundaConfirmacion =
-        confirm(
-            "Esto eliminará inventario, ventas y eventos. ¿Continuar?"
-        );
+    }
 
 
-    if (!segundaConfirmacion) return;
+    if(!confirm(
+        "Esto eliminará inventario, ventas, eventos, cortes y pagos. ¿Continuar?"
+    )){
+
+        return;
+
+    }
 
 
     datos =
         JSON.parse(
-            JSON.stringify(datosIniciales)
+            JSON.stringify(
+                datosIniciales
+            )
         );
 
 
@@ -2682,28 +3946,30 @@ function borrarTodo() {
 function cambiarPagina(
     pagina,
     boton
-) {
+){
 
     document
-        .querySelectorAll(".pagina")
-        .forEach(
-            elemento => {
-                elemento.classList.remove(
-                    "activa"
-                );
-            }
-        );
+    .querySelectorAll(
+        ".pagina"
+    )
+    .forEach(
+        elemento=>{
+            elemento.classList.remove(
+                "activa"
+            );
+        }
+    );
 
 
-    const paginaSeleccionada =
+    const seleccionada =
         document.getElementById(
             pagina
         );
 
 
-    if (paginaSeleccionada) {
+    if(seleccionada){
 
-        paginaSeleccionada.classList.add(
+        seleccionada.classList.add(
             "activa"
         );
 
@@ -2711,19 +3977,19 @@ function cambiarPagina(
 
 
     document
-        .querySelectorAll(
-            ".navegacion button"
-        )
-        .forEach(
-            elemento => {
-                elemento.classList.remove(
-                    "activo"
-                );
-            }
-        );
+    .querySelectorAll(
+        ".navegacion button"
+    )
+    .forEach(
+        elemento=>{
+            elemento.classList.remove(
+                "activo"
+            );
+        }
+    );
 
 
-    if (boton) {
+    if(boton){
 
         boton.classList.add(
             "activo"
@@ -2733,8 +3999,8 @@ function cambiarPagina(
 
 
     window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+        top:0,
+        behavior:"smooth"
     });
 
 }
@@ -2747,7 +4013,9 @@ function cambiarPagina(
 let toastTimer;
 
 
-function mostrarToast(mensaje) {
+function mostrarToast(
+    mensaje
+){
 
     const toast =
         document.getElementById(
@@ -2755,7 +4023,7 @@ function mostrarToast(mensaje) {
         );
 
 
-    toast.textContent =
+    toast.textContent=
         mensaje;
 
 
@@ -2771,14 +4039,12 @@ function mostrarToast(mensaje) {
 
     toastTimer =
         setTimeout(
-            () => {
-
+            ()=>{
                 toast.classList.remove(
                     "mostrar"
                 );
-
             },
-            2200
+            2500
         );
 
 }
@@ -2788,7 +4054,7 @@ function mostrarToast(mensaje) {
    ACTUALIZAR TODO
 ===================================================== */
 
-function actualizarTodo() {
+function actualizarTodo(){
 
     actualizarInicio();
 
@@ -2806,7 +4072,7 @@ function actualizarTodo() {
 
 
 /* =====================================================
-   INICIAR APP
+   INICIAR
 ===================================================== */
 
 actualizarTodo();
